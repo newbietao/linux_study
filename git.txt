@@ -1,0 +1,10 @@
+1.初始化一个git仓库
+	git init 
+2.为git添加一个文件
+	git add filename
+3.提交一个版本
+	git commit -m "版本描述信息"
+4.链接远程仓库
+	git remote add origin "github仓库地址"
+5.向远程仓库提交
+	git push -u origin master
