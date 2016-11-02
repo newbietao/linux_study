@@ -70,9 +70,14 @@
 			wget -i urlfile.txt
 			-i选项是从文件中读取url，urlfil.txt文件是写有url的文件
 		66.下载指定格式的文件
-			-A选项 指定文件格式
+			-A选项 指定文件格式，-A+.mp3/mp4/pdf/txt等等
 			wget -A.pdf http://www.baidu.com/
 			下载url的所有pdf文件
+		77.wget ftp下载
+			使用wget匿名ftp下载
+			wget ftp-url
+			使用wget 指定用户和密码下载 ftp
+			wget --ftp-user=username --ftp-password=passwd url
 	                 
                    
                    
