@@ -9,3 +9,5 @@
 5.向远程仓库提交
 	git push -u origin master
 	第一次可以带-u选项，而其他时候不用带-u选项
+6.查看仓库当前状态
+	git status
