@@ -48,7 +48,19 @@
 		-r:递归下载方式
 		-A：指定下载格式
 		-O:为下载的文件命名
-		-nc：文件存在时，不服该源文件
+		-nc：文件存在时，不覆盖原文件
+	b.实例
+		11.使用wget下载单个文件
+			wget http://www.baidu.com/testfile.zip
+			上面的命令是下载testfile.zip文件
+		22.为下载的文件命名
+			如果我们使用wget http://www.baidu.com/download.aspx?id=1080
+			下载文件：文件名会保存成download.aspx?id=1080这是我们不希望的，wget默认使用最后一个
+			/ 后面的字符为文件命名，我们可以使用-O选项为下载的文件命名：
+			wget -O testfile.zip http://www.baidu.com/download.aspx?id=1080这样我们下载的文件就会
+			命名为testfile.zip
+		
+		
 	
 	                 
                    
