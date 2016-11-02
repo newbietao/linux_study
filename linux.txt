@@ -13,4 +13,3 @@
 	  $ ssh root@www.hantao.website ls -a /
 	  比如上面的命令就是在远程服务器上执行ls -a的命令
 	  
-
