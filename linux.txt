@@ -63,6 +63,16 @@
 		33.断点下载
 			使用-c选项可以执行断点下载，断点下载是指继续下载上次因为某种原因中断在下载
 			wget -c http://www.baidu.com/testfile.zip	
+		44.后台下载
+			使用-d选项就可以进行后台下载
+			wget -d http://www.baidu.com/testfile.zip
+		55.下载多个文件
+			wget -i urlfile.txt
+			-i选项是从文件中读取url，urlfil.txt文件是写有url的文件
+		66.下载指定格式的文件
+			-A选项 指定文件格式
+			wget -A.pdf http://www.baidu.com/
+			下载url的所有pdf文件
 	                 
                    
                    
