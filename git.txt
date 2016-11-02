@@ -11,3 +11,7 @@
 	第一次可以带-u选项，而其他时候不用带-u选项
 6.查看仓库当前状态
 	git status
+7.查看git的所有版本
+	git log
+8.查看git的所有提交记录
+	git reflog
