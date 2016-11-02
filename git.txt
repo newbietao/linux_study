@@ -28,7 +28,10 @@
 	git commit 就是将暂存区的版本提交到当前分支上
 11.git的管理机制
 	Git跟踪并管理的是修改，而非文件。每次修改，如果不add到暂存区，
-	那就不会加入到commit中。
+	那就不会加入到commit(当前分支中)中。
+12.删除文件
+	git rm filename
+	git commit -m "删除一个文件"
 	
 
 
