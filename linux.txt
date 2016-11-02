@@ -60,8 +60,9 @@
 			wget -O testfile.zip http://www.baidu.com/download.aspx?id=1080这样我们下载的文件就会
 			命名为testfile.zip
 		
-		
-	
+		33.断点下载
+			使用-c选项可以执行断点下载，断点下载是指继续下载上次因为某种原因中断在下载
+			wget -c http://www.baidu.com/testfile.zip	
 	                 
                    
                    
