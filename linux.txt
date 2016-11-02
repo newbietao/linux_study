@@ -31,6 +31,13 @@
 	  ftp username@[hostname/ip] 登录服务器会提示输入密码
 	  ftp username:password@[hostname/ip] 直接登录服务器
 	b.下载文件
+	  get:下载单个文件 get host_file local_host
+	  get /usr/bin/aa.zip aa.zip  //把远程服务器上/usr/bin/aa.zip 下载到当前目录
+	  mget:下载多个文件 get /usr/bin/*.* //把远程服务器上的/usr/bin/下的所有文件下载到本地
+	c.上传文件：
+	  put:上传单个文件 //用法同get只是调换文件顺序
+	  mput：上传多个文件 //用法同mget
+	d.断开链接：bye
 	                 
                    
                    
