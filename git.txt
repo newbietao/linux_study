@@ -15,3 +15,6 @@
 	git log
 8.查看git的所有提交记录
 	git reflog
+9.版本退回
+	git reset --hard commit_id
+
