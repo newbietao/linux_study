@@ -23,7 +23,35 @@
 	  -c：指定次数
 	  -s：指定数据大小
 	  -i：指定发送数据等待时间
-		
-	  
-	  
-	
+3.linux ftp/sftp/lftp:文件传输协议
+	ftp/lftp:普通的文件传输协议
+	sftp：安全的文件传输协议（端口22）
+	a.链接ftp服务器：
+	  ftp [hostname/ip]  登录服务器会提示输入用户名和密码
+	  ftp username@[hostname/ip] 登录服务器会提示输入密码
+	  ftp username:password@[hostname/ip] 直接登录服务器
+	b.下载文件
+	                 
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
