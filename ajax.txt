@@ -101,6 +101,7 @@
 				3xx：从定向响应类，为了完成指定的动作，必须进行下一步处理
 				4xx：客户端错误类，客户端请求包括错误语法，或者不能正确执行
 				5xx：服务端错误类，服务器不能正确执行一个正确请求。
+				具体：请访问http://tool.oschina.net/commons?type=5
 		4）http协议示例：
 			请求头：
 				GET /tags/html_ref_httpmethods.asp HTTP/1.1
@@ -127,7 +128,16 @@
 				Content-Length: 20672
 				Content-Type: text/html
 				Cache-control: private
-	
+	2.原生js 实现ajax
+		1）获取XMLHttpRequest对象
+			var xhr = new XMLHttpRequest();//获取XMLHttpRequest对象
+			如果想要兼容老式浏览器
+			var xhr;
+			if(window.XMLHttpRequest){
+				xhr = new XMLHttpRequest();//新式浏览器
+			}else if(window.ActiveXObject){//老式浏览器
+				xhr=new ActiveXObject("Microsoft.XMLHTTP");
+			}
 
 
 
