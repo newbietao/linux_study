@@ -138,9 +138,32 @@
 			}else if(window.ActiveXObject){//老式浏览器
 				xhr=new ActiveXObject("Microsoft.XMLHTTP");
 			}
-
-
-
+		2）设置参数，open方法
+			if(xhr){
+				xhr.open('GET', '/test/', true); // 以GET请求的方式向
+												//'/test/'路径发送异步请求
+			}
+			open方法为我们创建了一个新的http请求，其中第一个参数为请求方式，
+			一般为'GET'或'POST'；第二个参数为请求url；第三个参数为是否异步，默认为true。
+		3)发送请求，send()方法
+			xhr.send();
+			这里需要注意的是如果使用GET方法传递参数，我们可以直接将参数放在url后面，
+			比如'/test/?name=luozh&size=12';如果使用POST方法，那么我们的参数需要
+			写在send方法里，如：
+			xhr.open('POST', '/test/', true);
+			xhr.send('name=luozh&size=12');
+		4)设置发送的数据格式
+			
+		5）状态监听
+			xhr.onreadystatechange = function () {// 利用onreadystatechange监测状态
+				if (xhr.readyState === 4) {  // readyState为4表示请求响应完成
+				    if (xhr.status === 200) { // status为200表示请求成功
+				        console.log('执行成功');
+				    } else {
+				        console.log('执行出错');
+				    }   
+				}
+			}
 
 
 
