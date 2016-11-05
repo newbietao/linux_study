@@ -21,4 +21,67 @@
 		},
 		"text"//服务器的返回类型，xml、json、script、text。
 	);
+4.$.ajax();//这是jquery最低成的ajax实现，其他方法都可以使用他实现
+	$.ajax({
+		url:"url",//发送请求的地址
+		type:"POST",//请求的方式：默认是GET
+		data:{name:"hantao",pass:"1244"},//发送到服务器的数据
+		dataType:"text",//服务器返回的数据类型:xml\html\script\json\text
+		beforeSend:function(XMLHttpRequest){
+			//在发送请求前可以修改XMLHttpRequest对象
+			//return false可以取消这次请求	
+			this;//调用本次ajax请求时传递的options参数
+		},
+		complete:function(XMLHttpRequest，textStatus){
+			//请求完成后的回调函数，无论是否成功
+			//参数1：XMLHttpRequest对象
+			//参数2：一个描述请求成功类型的字符串	
+			this;//调用本次ajax请求时传递的options参数	
+		},
+		success:function(data,textStatus){
+			//请求成功的回调函数
+			//参数1：服务器返回的数据
+			//参数2：描述状态的字符串
+			this;//调用本次ajax请求时传递的options参数		
+		},
+		error:function(XMLHttpRequest,textStatus,errorThrown){
+			//请求失败时调用的函数
+			//参数1：XMLHttpRequest对象
+			//参数2：错位信息
+			//参数3：错误的捕获对象
+			this;//调用本次ajax请求时传递的options参数
+		},
+		globsl:true//是否出发全局ajax事件
+
+	});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
