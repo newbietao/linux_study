@@ -76,7 +76,53 @@
 				。请求行
 				。请求头部
 				。请求正文
-			b.请行
+			b.请求行的格式
+				请求的方法  请求路径  http版本
+				例如：GET /luozhihao/p/5846925.html HTTP/1.1
+				在浏览器进入开发者工具，在network里可以看到请求的信息。
+			c.请求的方法：这里只介绍常用的方法
+				。get:请求可被缓存,请求保留在浏览器历史记录中,请求可被收藏为书签
+					请求不应在处理敏感数据时使用,请求有长度限制,建议只用与请求数据
+					不要用作修改数据，例如页面跳转等等。
+				。post：请求不会被缓存,请求不会保留在浏览器历史记录中,不能被收藏为书签
+					请求对数据长度没有要求,可以用于表单提交，注册等等。
+		3）http：响应
+			a.响应的格式
+				。响应行
+				。响应头部
+				。响应正文
+			b.响应行的格式
+				http版本 状态码 状态文本
+				例如：HTTP/1.1 200 OK
+				在浏览器进入开发者工具，在network里可以看到请求的信息。
+			c.状态码：
+				
+		4）http协议示例：
+			请求头：
+				GET /tags/html_ref_httpmethods.asp HTTP/1.1
+				Host: www.w3school.com.cn
+				Connection: keep-alive
+				Cache-Control: max-age=0
+				Upgrade-Insecure-Requests: 1
+				User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36
+				 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36
+				Accept: text/html,application/xhtml+xml,application/xml;q=0.9,
+				image/webp,*/*;q=0.8
+				Referer: https://www.baidu.com/link?url=BIYyI
+				5wKqa-ln4Hfw6fTLEnDJSpHrJEAiGjUNrZftRbTGSSyqqmslt7COlo02g_R5Y3
+				nk31xAh8_xMDbFIQ88NS_wcFce67-_X0FOM2W9ji&wd=&eqid=d96855ca0006
+				491e00000002581dca15
+				Accept-Encoding: gzip, deflate, sdch
+				Accept-Language: zh-CN,zh;q=0.8,en;q=0.6
+				Cookie: ASPSESSIONIDQQQRQTDC=FJOAIDHCHELPIMMCNPNFJFEP
+			响应头：
+				HTTP/1.1 200 OK
+				Date: Sat, 05 Nov 2016 12:09:21 GMT
+				Server: Microsoft-IIS/6.0
+				X-Powered-By: ASP.NET
+				Content-Length: 20672
+				Content-Type: text/html
+				Cache-control: private
 	
 
 
