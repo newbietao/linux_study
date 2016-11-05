@@ -1,1 +1,4 @@
-1.jq-$.get
+1.jq --ajax学习笔记
+	jq的ajax都依靠jquery.js文件所以，我们在使用jq-ajax必须先引进jquery.js
+	文件，其中jq的ajax常用的方法有$.get();$.post();$.ajax();
+	
