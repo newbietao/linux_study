@@ -1,4 +1,13 @@
 1.jq --ajax学习笔记
 	jq的ajax都依靠jquery.js文件所以，我们在使用jq-ajax必须先引进jquery.js
 	文件，其中jq的ajax常用的方法有$.get();$.post();$.ajax();
-	
+2.$.get()方法：
+	$.get("url",//url：后台服务器的地址
+		{message:"hello"},//使用get方法发送的数据类型为object
+		function(data，textStatus){//callback//回调函数，载入成功后执行的函数
+		//参数1：服务器返回的数据
+		//参数2：请求的状态：success.error.timeout.notmodified四种
+			
+		},
+		"text"//服务器的返回类型
+	);
