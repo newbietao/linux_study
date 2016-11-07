@@ -4,4 +4,39 @@
 		hantao@:~$ node
 		> console.log("hello world");
 		hello world
-
+	2.搭建一个服务器
+		a.引入http模块
+			var http = require("http");
+		b.创建服务器
+			var server = http.createServer(calback);
+		c.监听端口
+			server.listen(3000,hostname,callback);
+		d.完整代码
+			var http = require("http");
+			var port = 3000;
+			var hostname = "loaclhost";
+			var server = http.createServer(function(req,res){
+				res.statusCode = 200;
+				res.setHeader("Content-Type","text/plain");
+				res.end("hello world");
+			});
+			server.listen(port,hostname,function(){
+				console.log("the server is runing in:"+hostname+":"+port);
+			});
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
