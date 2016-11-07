@@ -394,7 +394,34 @@
 				从指定监听器数组中删除一个监听器。需要注意的是，此操作将会改变处于
 				被删监听器之后的那些监听器的索引。
 			e.实例：
-				
+				var events = require("events");
+				var eventEmitter = new events.EventEmitter();
+				eventEmitter.on("event1",callback1);
+				setTimeout(function(){
+					eventEmitter.emit("event1");
+					eventEmitter.addListener("event2",callback2);
+				},1000)
+				setTimeout(function(){
+					eventEmitter.emit("event2");
+				},2000)
+				setTimeout(function(){
+					eventEmitter.removeListener("event2",callback2);
+				},3000)
+				eventEmitter.on("newListener",callback3);
+				eventEmitter.on("removeListener",callback4);
+				function callback1(){
+					console.log("callback1");
+				}
+				function callback2(){
+					console.log("callback2");
+				}
+				function callback3(){
+					console.log("添加一个事件");
+				}
+				function callback4(){
+					console.log("删除一个事件");
+				}
+
 
 			
 			
