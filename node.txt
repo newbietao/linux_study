@@ -159,7 +159,50 @@
 			>
 			(^C again to quit)
 			>
-			
+	5.nodejs的回调
+		Node.js 异步编程的直接体现就是回调。
+		异步编程依托于回调来实现，但不能说使用了回调后程序就异步化了。
+		回调函数在完成任务后就会被调用，Node 使用了大量的回调函数，Node 所有 API 都
+		支持回调函数。
+		例如，我们可以一边读取文件，一边执行其他命令，在文件读取完成后，我们将文件内容
+		作为回调函数的参数返回。这样在执行代码时就没有阻塞或等待文件 I/O 操作。这就大大
+		提高了 Node.js 的性能，可以处理大量的并发请求。
+		a.阻塞示例：
+			function fun1(){
+				console.log("fun1");
+			}
+			function fun2(){
+				console.log("fun2");
+			}
+			function fun3(){
+				console.log("fun3");
+			}
+			fun1();
+			fun2();
+			fun3();
+			输出结果：
+			fun1
+			fun2
+			fun3
+		b.非阻塞示例：
+			function fun1(fun2){
+				console.log("fun1");
+				setTimeout(fun2,500);
+			}
+			function fun2(){
+				console.log("fun2");
+			}
+			function fun3(){
+				console.log("fun3");
+			}
+			fun1(fun2);
+			fun3();
+			输出结果：
+			fun1
+			fun3
+			fun2
+		因此，阻塞是按顺序执行的，而非阻塞是不需要按顺序的，所以如果需要处理回调函数的参数，
+		我们就需要写在回调函数内。
 			
 			
 			
