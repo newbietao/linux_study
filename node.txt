@@ -153,7 +153,12 @@
 			.clear - 退出多行表达式
 			.save filename - 保存当前的 Node REPL 会话到指定文件
 			.load filename - 载入当前 Node REPL 会话的文件内容。
-			
+		f.退出REPL
+			前面我们已经提到按下两次 ctrl + c 建就能退出 REPL:
+			$ node
+			>
+			(^C again to quit)
+			>
 			
 			
 			
