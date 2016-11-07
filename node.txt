@@ -110,7 +110,24 @@
 			> console.log("www.runoob.com")
 			www.runoob.com
 			undefined
-			
+		c.多行表达式
+			Node REPL 支持输入多行表达式，这就有点类似 JavaScript。
+			接下来让我们来执行一个 do-while 循环：
+			$ node
+			> var x = 0
+			undefined
+			> do {
+			... x++;
+			... console.log("x: " + x);
+			... } while ( x < 5 );
+			x: 1
+			x: 2
+			x: 3
+			x: 4
+			x: 5
+			undefined
+			>
+		d.
 			
 			
 			
