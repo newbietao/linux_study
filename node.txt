@@ -92,6 +92,24 @@
 			> 1 + ( 2 * 3 ) - 4
 			3
 			>
+		b.使用变量
+			你可以将数据存储在变量中，并在你需要的使用它。
+			变量声明需要使用 var 关键字，如果没有使用 var 关键字变量会直接打印出来。
+			使用 var 关键字的变量可以使用 console.log() 来输出变量。
+
+			$ node
+			> x = 10
+			10
+			> var y = 10
+			undefined
+			> x + y
+			20
+			> console.log("Hello World")
+			Hello World
+			undefined
+			> console.log("www.runoob.com")
+			www.runoob.com
+			undefined
 			
 			
 			
