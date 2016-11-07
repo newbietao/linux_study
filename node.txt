@@ -1,3 +1,7 @@
 一、原生node
-	1.创建服务器
-		
+	1.第一个node程序：hello node
+		打开终端  输入node  回车  console.log("hello world");
+		hantao@:~$ node
+		> console.log("hello world");
+		hello world
+
