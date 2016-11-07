@@ -219,6 +219,24 @@
 			main.js:require()函数是加载模块，./代表同级目录，hello：代表hello.js
 			js文件可以省略后缀。
 			hello.js:exports.world是将world函数暴落给模块系统。
+		c.为一个对象创建模块
+			我们在创建一个sayhello.js,代码：
+			funtion hello(){
+				var name = "";
+				this.setnaem = function(sname){
+					this.name  = sname;
+				};
+				this.sayhello = function(){
+					console.log("hello "+this.name);
+				};
+				module.exports = hello;
+			
+			}
+			main.js增加代码：
+				var say = require("./sayhello");
+				var sayhello = new say();
+				sayhello.setname("hantao");
+				sayhello.sayhello();
 		
 			
 			
