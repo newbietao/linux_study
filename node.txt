@@ -265,7 +265,14 @@
 				eventEmitter.on('eventName', eventHandler);
 				// 触发事件
 				eventEmitter.emit('eventName');
-			
+				实例：
+				var events = require("events");
+				var eventEmitter = new events.EventEmitter();
+				eventEmitter.on("event_name",callback);
+				eventEmitter.emit("event_name");
+				function callback(){
+					console.log("some event emit");
+				}
 			
 			
 			
