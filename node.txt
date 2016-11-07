@@ -203,7 +203,19 @@
 			fun2
 		因此，阻塞是按顺序执行的，而非阻塞是不需要按顺序的，所以如果需要处理回调函数的参数，
 		我们就需要写在回调函数内。
-			
+	6.node的模块系统：
+		module对象是模块系统的核心，require和exports是它的两个属性，exports是模块的
+		公开接口，require是模块的请求接口。在node中一个node.js文件就是一个模块。
+		a.创建模块
+			1）首先创建一个main.js,代码如下：
+				var hello = require("./hello");
+				hello.world();
+			2）创建一个hello.js,代码如下：
+				exports.world = function(){
+					console.log("hello world");
+				};
+			3）$ node main.js 会输出hello world
+		
 			
 			
 			
