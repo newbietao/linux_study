@@ -215,7 +215,54 @@
 					console.log("hello world");
 				};
 			3）$ node main.js 会输出hello world
+		b.代码分析：
+			main.js:require()函数是加载模块，./代表同级目录，hello：代表hello.js
+			js文件可以省略后缀。
+			hello.js:exports.world是将world函数暴落给模块系统。
 		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			
 			
 			
