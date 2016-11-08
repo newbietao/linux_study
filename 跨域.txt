@@ -24,4 +24,108 @@
 	这里说的js跨域是指通过js在不同的域之间进行数据传输或通信，比如用ajax向一个不同的域请求数据，
 	或者通过js获取页面中不同域的框架中(iframe)的数据。只要协议、域名、端口有任何一个不同，
 	都被当作是不同的域。
-	1.通过jsonp跨域
+	1.通过jsonp跨域：json padding
+		下面我们结合代码进行讲解：
+		www.a.com/index.html:
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<title>Document</title>
+		</head>
+		<body>
+	
+			<script>
+				function aa(data){
+					console.log(data);
+				}
+			</script>
+			<script src="http://www.b.com/test.php?callback=aa"></script>
+		</body>
+		</html>
+		在index.html文件中使用script标签引入www.b.com/test.php并把回调函数作为参数
+		传递给www.b.com/test.php。
+		www.b.com/test.php:
+		<?php
+	
+			$callback = $_GET["callback"];
+			$data = "{
+				'name':'hantao',
+				'age':23,
+				'sex':'man'
+			}";
+			echo $callback."(".$data.")";
+
+		?>
+		www.b.com/test.php通过get方法接收到参数并把回调函数和数据一同返回给www.a.com\
+		index.html.最后www.a.com/index.html的形式如下：
+		www.a.com/index.html:
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<title>Document</title>
+		</head>
+		<body>
+	
+			<script>
+				function aa(data){
+					console.log(data);
+				}
+			</script>
+			<script>
+				aa({name: "hantao", age: 23, sex: "man"});
+			</script>
+		</body>
+		</html>
+		
+		这样jsonp的原理就很清楚了，通过script标签引入一个js文件，这个js文件载入成功后
+		会执行我们在url参数中指定的函数，并且会把我们需要的json数据作为参数传入。所以
+		jsonp是需要服务器端的页面进行相应的配合的。
+
+		知道jsonp跨域的原理后我们就可以用js动态生成script标签来进行跨域操作了，而不用
+		特意的手动的书写那些script标签。如果你的页面使用jquery，那么通过它封装的方法就
+		能很方便的来进行jsonp操作了。
+		<script>
+			$(function(){
+				$.getJSON("http://www.b.com/test.php?callback=?",function(data){
+						console.log(data);
+				});
+			});
+
+		</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
