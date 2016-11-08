@@ -1,0 +1,27 @@
+一、xampp如何配置虚拟域名
+	1.先安装xampp或者lampp，注意不要开启
+	2.找到你的xampp安装目录，依次找到下面的目录：
+	apache目录--conf目录--extra目录--httpd-vhosts.conf文件，使用编辑器打开
+	3.把下面代码加到httpd-vhosts.conf文件中
+		<VirtualHost *:80>
+		 ServerName www.xxxxx.com
+		 DocumentRoot "项目的路径，要求是绝对路径"
+		<Directory "D:项目的路径，要求是绝对路径"> 
+		 Options FollowSymLinks IncludesNOEXEC Indexes
+		 DirectoryIndex index.html index.htm index.php
+		 AllowOverride all 
+		 Order Deny,Allow 
+		 Allow from all 
+		 Require all granted
+		</Directory>
+		</VirtualHost>
+	4.修改host文件
+		a.windows系统：打开C盘，依次找到下面的目录：windows目录--system32目录
+		--drivers目录--etc目录--找到hosts文件，使用编辑器打开；
+		b.linux：/etc/hosts文件
+		c.在文件中加入：127.0.0.1 www.xxxxxx.com //和你的虚拟域名相对应
+二、js中几种实用的跨域方法原理详解
+	这里说的js跨域是指通过js在不同的域之间进行数据传输或通信，比如用ajax向一个不同的域请求数据，
+	或者通过js获取页面中不同域的框架中(iframe)的数据。只要协议、域名、端口有任何一个不同，
+	都被当作是不同的域。
+	1.通过jsonp跨域
