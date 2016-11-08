@@ -145,6 +145,57 @@
 			跳转后最终弹出内容是：我是界面一设置的内容
 			
 			示例二：不跳转也能获得数据
+			a.html页面中使用一个隐藏的iframe来充当一个中间人角色，由iframe去获取
+			data.html的数据，然后a.html再去得到iframe获取到的数据。
+
+			充当中间人的iframe想要获取到data.html的通过window.name设置的数据，只需要
+			把这个iframe的src设为www.b.com/data.html就行了。然后a.html想要得
+			到iframe所获取到的数据，也就是想要得到iframe的window.name的值，还必须把这
+			个iframe的src设成跟a.html页面同一个域才行，不然根据前面讲的同源策略，a.html
+			是不能访问到iframe里的window.name属性的。这就是整个跨域过程。
+			
+				www.a.com/a.html:
+				
+				<!DOCTYPE html>
+				<html lang="en">
+				<head>
+					<meta charset="UTF-8">
+					<title>Document</title>
+					<script>
+					   function getdata(){
+					   	var iframe = document.getElementById("ifra");
+					   	iframe.src = "b.html";
+						iframe.onload = function(){
+							var data = iframe.contentWindow.name;
+							alert(data);
+						};
+		
+					   }
+		
+
+					</script>
+				</head>
+				<body>
+					<iframe id="ifra" src="http://www.b.com/data.html" 
+					frameborder="0" style="display: none" onload="getdata()">
+					</iframe>
+				</body>
+				</html>
+				
+				www.b.com/data.html:
+				
+				<!DOCTYPE html>
+				<html lang="en">
+				<head>
+					<meta charset="UTF-8">
+					<title>Document</title>
+				</head>
+				<body>
+					<script>
+						window.name = "www.b.com";
+					</script>
+				</body>
+				</html>
 				
 		
 	
