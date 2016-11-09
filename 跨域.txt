@@ -207,8 +207,52 @@
 		
 		需要接收消息的window对象，可是通过监听自身的message事件来获取传过来的消息，消息
 		内容储存在该事件对象的data属性中。
+		使用postMessage来跨域传送数据还是比较直观和方便的，但是缺点是IE6、IE7不支持，
+		所以用不用还得根据实际需要来决定。
+		示例一：
 		
-		示例：
+		www.a.com/a.html:
+		
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<title>Document</title>
+		</head>
+		<body>
+			<script>
+				function load(){
+					var ifra = document.getElementById("ifra");
+					var win = ifra.contentWindow;
+					win.postMessage("这是来自a页面的消息","*");
+					
+				};
+			</script>
+			<iframe id="ifra" src="http://www.b.com/bb.html" 
+			frameborder="1" onload="load()"></iframe>
+	
+		</body>
+		</html>
+		
+		www.b.com/b.html:
+		
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<title>Document</title>
+		</head>
+		<body>
+			<script>
+				window.onmessage = function(e){
+					e = e||event;
+					alert(e.data);
+				};
+
+			</script>
+		</body>
+		</html>
+		最后网页会弹出：这是来自a页面的消息
 				
 		
 	
