@@ -253,6 +253,72 @@
 		</body>
 		</html>
 		最后网页会弹出：这是来自a页面的消息
+		
+		示例2：获取其他域数据
+		www.a.com/postmessage.html:
+		
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<title>Document</title>
+			<style>
+				iframe{
+					display: none;
+				}
+
+			</style>
+		</head>
+		<body>
+			<button id="but">get data</button>
+			<iframe id="ifra" src="http://www.b.com/postmessage2.html" 
+			frameborder="0"></iframe>
+			<script>
+				var ifra = document.getElementById("ifra");
+				var win = ifra.contentWindow;
+				var but = document.getElementById("but");
+				but.onclick = function(){
+					win.postMessage("hantao","*");
+				};
+				window.onmessage = function(e){
+					e = e||event;
+					alert(e.data);
+				}
+			</script>
+		</body>
+		</html>
+		
+		www.b.com/postmessage2.html:
+		
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<title>Document</title>
+			<style>
+				iframe{
+					display: none;
+				}
+
+			</style>
+		</head>
+		<body>
+			<button id="but">get data</button>
+			<iframe id="ifra" src="http://www.a.com/postmessage.html" 
+			frameborder="0"></iframe>
+			<script>
+			window.onmessage = function(e){
+				e = e||event;
+				var ifra = document.getElementById("ifra");
+				var win = ifra.contentWindow;
+				win.postMessage("hello"+e.data,"*");
+			};
+		
+		
+		
+			</script>
+		</body>
+		</html>
 				
 		
 	
