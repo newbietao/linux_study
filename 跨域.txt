@@ -196,6 +196,19 @@
 					</script>
 				</body>
 				</html>
+	3.使用HTML5中新引进的window.postMessage方法来跨域传送数据
+		window.postMessage(message,targetOrigin)  方法是html5新引进的特性，可以
+		使用它来向其它的window对象发送消息，无论这个window对象是属于同源或不同源，目前
+		IE8+、FireFox、Chrome、Opera等浏览器都已经支持window.postMessage方法。
+		
+		调用postMessage方法的window对象是指要接收消息的那一个window对象，该方法的第一
+		个参数message为要发送的消息，类型只能为字符串；第二个参数targetOrigin用来限定
+		接收消息的那个window对象所在的域，如果不想限定域，可以使用通配符 *  。
+		
+		需要接收消息的window对象，可是通过监听自身的message事件来获取传过来的消息，消息
+		内容储存在该事件对象的data属性中。
+		
+		示例：
 				
 		
 	
