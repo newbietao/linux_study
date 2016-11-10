@@ -256,7 +256,30 @@
 			e.空值：null
 			f.值列表：使用空格或者逗号分开，如，10px 20px 30px、Arial,Helvetica,
 			sana-serit
-		9.
+		9.算数运算：
+			$width1:200px;
+			$width2:100px;
+			$color1:#010203;
+			$color2:#040506;
+			.width1{
+				width:$width1 + $width2;
+				height:$width1 + 10px;
+				color:$color1 + $color2;
+			} 
+			.width2{
+				width:$width1 - $width2;
+				color:$color2 - $color1;
+			}
+			.width3{
+				width:$width2 * 2;
+				color:$color1 * 2;
+			}
+			.width4{
+				width:$width1 / 2;
+				color:$color2 / 2;
+			}
+
+			
 		
 	
 	
