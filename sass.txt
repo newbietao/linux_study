@@ -248,7 +248,16 @@
 		7.注释：
 			a./**/这种注释可以在可以在css文件中显示
 			b.//不能在css中显示
-		8.
+		8.数据类型：
+			a.数字：1、2、3、10px
+			b.字符串："foo"、'red'、blue
+			c.颜色：blue、#000、rgba(255,0,0,0.5)
+			d.bool：true、false
+			e.空值：null
+			f.值列表：使用空格或者逗号分开，如，10px 20px 30px、Arial,Helvetica,
+			sana-serit
+		9.
+		
 	
 	
 	
