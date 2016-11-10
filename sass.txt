@@ -76,7 +76,38 @@
 			
 		
 		
-	2.数值运算
+	2.嵌套
+		a.选择器嵌套：
+			假设html：
+			<html>
+				<header>
+					<nav>
+						<a></a>
+						<a></a>
+						<a></a>
+						<a></a>
+					</nav>
+				</header>
+			</html>
+			想选中a标签css：
+				nav a{
+					color:red;
+				}
+				或者：
+				header nav a{
+					color:red;
+				}
+			sass:
+				nav{
+					a{
+						color:red;
+						header &{
+							color:red;
+						}
+					}
+				}
+		b.属性嵌套：
+		c.伪类嵌套：
 	3.
 	
 	
