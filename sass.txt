@@ -17,7 +17,7 @@
 			3)sass的默认变量一般是设置默认值的，然后根据需求覆盖的，
 			  覆盖只需在默认变量之前进行重新赋值就行。
 			4)示例：
-				$width:500px;//覆盖默认变量
+				$width:500px;//覆盖默认
 				$width:300px !default;//默认变量
 				div{
 					width:$width;
@@ -26,6 +26,54 @@
 				div{
 					width:500px;
 				}
+		c.变量的调用(局部变量和全局变量)
+			1）全局变量
+				sass里的全局变量在全局都可以调用，在sass的选择器、函数、混合宏
+				。。外面的定义的变量，是全局变量，例如：
+				$bg-color:red;
+				div{
+					$color:#000;
+					background:$bg-color;//调用全局变量
+					color:$color;//调用局部变量
+					
+				}
+				编译结果：
+				div{
+					background:red;
+					color:#000;
+				}
+			2)局部变量：
+				局部变量实在局部定义的变量，作用范围仅仅是当前作用域，其他
+				作用域无效，在当前作用域，如果局部变量和全局变量一至，局部变量覆盖
+				全局变量。如果局部变量加!global参数，就可以变成全局变量。例如：
+				$color:red;//全局变量
+				.div1{
+					color:$color;//应用全局变量
+				}
+				.div2{
+					$color:green;//声明局部变量
+					color:$color;//调用局部变量
+				}
+				.div3{
+					$bg-color:green !global;//定义全局变量
+					background:$bg-color;//调用全局变量
+				}
+				.div4{
+					background:$bg-color;//调用全局变量
+				}
+				编译结果：
+				.div1 {
+				  color: red; }
+
+				.div2 {
+				  color: green; }
+
+				.div3 {
+				  background: green; }
+
+				.div4 {
+				  background: green; }
+			
 		
 		
 	2.数值运算
