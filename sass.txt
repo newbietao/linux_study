@@ -202,6 +202,28 @@
 				.btn2{
 					@extend .btn;
 				}
+				编译结果：
+				.btn,.btn2{
+					width:120px;
+					height:30px;
+					color:red;
+				}
+		5.占位符：%placeholder
+			a.占位符：是%加一个占位符的名字组成的一个样式块，并可以用@extend继承。
+			  如果不被@extend继承，则不会生成代码。
+			b.示例：
+				%btn{
+					width:500px;
+					height:800px;
+				}
+				.btn{
+					@extend %btn;
+				}
+				编译结果：
+				.btn{
+					width:500px;
+					height:800px;
+				}
 	
 	
 	
