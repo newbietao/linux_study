@@ -107,6 +107,18 @@
 					}
 				}
 		b.属性嵌套：
+			sass提供了属性嵌套：用于前缀相同后缀不同的属性，例如：
+			div{
+				border:{
+					top:1px solid #000;
+					left:2px solid red;
+				}
+			}
+			编译结果：
+			div{
+				border-left:1px solid red;
+				border-top:1px solid #000;
+			}
 		c.伪类嵌套：
 	3.
 	
