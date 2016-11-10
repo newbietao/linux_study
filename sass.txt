@@ -224,6 +224,31 @@
 					width:500px;
 					height:800px;
 				}
+		6.插值：#{}
+			a.#{}不能在@mixin中使用
+			b.在构建选择器中使用
+				$btn:bnt;
+				$btn2:".btn2";
+				.#{$btn}{
+					width:200px;
+				}
+				#{$btn2}{
+					width:200px;
+				}
+				编译结果：
+				.bnt {
+				  width: 200px; }
+
+				.btn2 {
+				  width: 200px; }
+			c.在@extend中使用
+				button{
+					@extend #{$btn2};
+				}
+		7.注释：
+			a./**/这种注释可以在可以在css文件中显示
+			b.//不能在css中显示
+		8.
 	
 	
 	
