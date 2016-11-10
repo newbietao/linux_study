@@ -158,7 +158,7 @@
 					-webkit-border-radius:5px;
 					border-radius:5px;
 				}
-			2)调用一个可以传参数的混合宏：
+			2)调用一个可以传不带值的参数的混合宏：
 				@mixin font($size,$weight){
 					font-size:$size;
 					font-weight:$weight;
@@ -171,8 +171,37 @@
 					font-size:20px;
 					font-weight:900;
 				}
-	
-	
+			3)调用一个带值的参数的混合宏
+				@mixin font($size:20px,$weight:700){
+					font-size:$size;
+					font-weight:$weight;
+				}
+				p{
+					@include font();//不传参数使用默认值
+				}
+				a{
+					@include font(10px,900);//窜地参数使用参数值
+				}
+				编译结果：
+				p{
+					font-size:20px;
+					font-weight:700;
+				}
+				a{
+					font-size:10px;
+					font-weight:900
+				}
+		4.继承
+			a.@extend关键字进行继承，已存在的类样式块。
+			b.示例：
+				.btn{
+					width:120px;
+					height:30px;
+					color:red;
+				}
+				.btn2{
+					@extend .btn;
+				}
 	
 	
 	
