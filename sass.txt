@@ -119,8 +119,58 @@
 				border-left:1px solid red;
 				border-top:1px solid #000;
 			}
-		c.伪类嵌套：
-	3.
+		c.伪类嵌套：&代表嵌套外面的父辈元素
+			scss:
+			div{
+				&:after,&:before{
+					content:"";
+					display: block;
+				}
+			}
+			css:
+			div:after, div:before {
+		  		content: "";
+		  		display: block; }
+	3.混合宏
+		a.声明混合宏：
+			1）不带参数的
+			@mixin border-radius{//使用@mixin声明混合宏。
+				-webkit-border-radius:5px;
+				border-radius:5px;
+			}
+			2）带参数的混合宏：
+			@mixin border-radius($radius:5px){
+				-weblit-border-radius:$radius;
+				border-radius:$radius;
+			
+			}
+		b.调用混合宏：
+			1）使用@include调用混和宏。
+				@mixin border-radius{
+					-webkit-border:5px;
+					border-radius:5px;
+				}
+				button{
+					@include border-radius;
+				}
+				编译结果：
+				button{
+					-webkit-border-radius:5px;
+					border-radius:5px;
+				}
+			2)调用一个可以传参数的混合宏：
+				@mixin font($size,$weight){
+					font-size:$size;
+					font-weight:$weight;
+				}
+				p{
+					@include font(20px,900);
+				}
+				编译结果：
+				p{
+					font-size:20px;
+					font-weight:900;
+				}
 	
 	
 	

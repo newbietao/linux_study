@@ -47,7 +47,7 @@
 	一分支。
 	
 	git reset HEAD file可以把暂存区的修改撤销掉（unstage），重新放回
-	工作区：一个分支”的命令，我们在后面的分支管理中会再次遇到git checkout命令。
+	工作区。
 	
 
 

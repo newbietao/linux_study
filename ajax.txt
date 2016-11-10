@@ -25,6 +25,7 @@
 		$.ajax({
 			url:"url",//发送请求的地址
 			type:"POST",//请求的方式：默认是GET
+			timeout:5000,//设置请求超时时间，以毫秒为单位。
 			data:{name:"hantao",pass:"1244"},//发送到服务器的数据
 			dataType:"text",//服务器返回的数据类型:xml\html\script\json\text
 			beforeSend:function(XMLHttpRequest){
@@ -54,6 +55,25 @@
 			globsl:true//是否出发全局ajax事件
 
 		});
+	4.jq-ajax的一些全局事件
+		1）jq-ajax全局函数,作用于jq对象
+			a. ajaxStart(callback);//ajax请求开始时执行的函数
+			b. ajaxStop(callback);//ajax请求结束是执行的函数
+			c. ajaxComplete(callback);//ajax请求完成后执行的函数
+			d. ajaxError(callback);//ajax请求错误时执行的函数
+			e. ajaxSend(calback);//ajax请求前的执行的函数
+			f. ajaxSuccess(calback);//ajax请求成功是执行的函数
+		2）示例：仅对ajaxStart()和ajaxStop()进行演示
+			<div id="load">加载中</div>
+			$("#load").ajaxStart(function(){
+				$(this).show();
+			
+			}).ajaxStop(function(){
+				$(this).hide();
+			});
+	5.jq-ajax序列化：
+		
+			
 二、原生ajax
 	1.http:基础知识：
 		1）http:协议
@@ -153,8 +173,22 @@
 			xhr.open('POST', '/test/', true);
 			xhr.send('name=luozh&size=12');
 		4)设置发送的数据格式
-			xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded"); 
-			// 将请求头设置为表单方式提交
+			xhr.setRequestHeader("key","value"); 
+			// 显示此HTTP请求提交的内容类型。一般只有post提交时才需要设置该属性。
+			有关Content-Type属性值可以如下两种编码类型：
+			（1）“application/x-www-form-urlencoded”： 表单数据向服务器提交时所采
+			用的编码类型，默认的缺省值就是“application/x-www-form-urlencoded”。 
+			然而，在向服务器发送大量的文本、包含非ASCII字符的文本或二进制数据时这种编码
+			方式效率很低。
+			（2）“multipart/form-data”： 在文件上载时，所使用的编码类型应当是
+			“multipart/form-data”，它既可以发送文本数据，也支持二进制数据上载。
+			当提交为单单数据时，可以使用“application/x-www-form-urlencoded”；
+			当提交的是文件时，就需要使用“multipart/form-data”编码类型。
+			在Content-Type属性当中还是指定提交内容的charset字符编码。一般不进行设置，
+			它只是告诉web服务器post提交的数据采用的何种字符编码。
+			一般在开发过程，是由前端工程与后端UI工程师商量好使用什么字符编码格式来
+			post提交的，然后后端ui工程师按照固定的字符编码来解析提交的数据。所以这里
+			设置的charset没有多大作用
 			xhr.send(JSON.stringify({name: 'luozh', size: 12}));
 			//使用json格式作为数据传递
 			注意设置数据传递类型要在send函数前面
@@ -168,7 +202,23 @@
 				    }   
 				}
 			}
-		6）完整的代码
+		6) ajax状态码：
+			0 － （未初始化）还没有调用send()方法
+			1 － （载入）已调用send()方法，正在发送请求
+			2 － （载入完成）send()方法执行完成，已经接收到全部响应内容
+			3 － （交互）正在解析响应内容
+			4 － （完成）响应内容解析完成，可以在客户端调用了
+		7）ajax：XMLHttpRequest对象
+			readyState:4 //ajax的状态
+			response:"<h3>11</h3>"//响应内容
+			responseText:"<h3>11</h3>"//响应文本
+			responseType:""//响应类型
+			responseURL:"http://localhost/servertest/ajax.php?name=11&pass=223"
+			responseXML:null
+			status:200//http状态
+			statusText:"OK"//状态描述字符串
+			timeout:0
+		8）完整的代码
 			var xhr;
 
 			if (window.XMLHttpRequest) {
@@ -182,12 +232,54 @@
 				xhr.send();
 				xhr.onreadystatechange = function () {// 利用onreadystatechange监测状态
 					if (xhr.readyState === 4) {// readyState为4表示请求响应完成
+					
 						if (xhr.status === 200) {// status为200表示请求成功
 						    console.log('执行成功');
 						} else {
 						    console.log('执行出错');
 						}   
 					}
+				}
+			}
+		9）ajax的另一种写法
+			var xhr;
+
+			if (window.XMLHttpRequest) {
+				xhr=new XMLHttpRequest();
+			} else if (window.ActiveXObject) {
+				xhr=new ActiveXObject("Microsoft.XMLHTTP");
+			}
+
+			if (xhr) {
+				xhr.addEventListener("loadStart",onLoadStart,false);
+				//监听开始加载事件
+				xhr.addEventListener("progress",onProgress,false);
+				//
+				xhr.addEventListener("load",onLoad,false);
+				//加载事件
+				xhr.addEventListener("error",onError,false);
+				//错误事件
+				xhr.addEventListener("abort",onAbort,false);
+				//请求终止事件
+				//注意使用addEventListener监听必须放在open或send前面
+				xhr.open('GET', '/test/', true);// 以GET请求的方式向'/test/'路径发送异步请求
+				xhr.send();
+				function onLoadStart(evt){
+					console.log("request starting");
+				}
+				function onProgress(evt){
+					var currentPercent = (evt.loaded / evt.total)*100;
+					console.log(currentPercent);
+					//可以计算百分比
+				}
+				function onLoad(evt){
+					console.log("transfer is complete");
+				}
+				function onError(evt){
+					console.log("error durin transfer");
+				}
+				function onAbort(evt){
+					console.log("the user abourt the transfer");
 				}
 			}
 
