@@ -284,7 +284,7 @@
  			@if bool {}或者 @if bool{}@else{} 或者 
  			@if bool {} @else if bool {}
  		b.示例：
- 			@mixin blockorhidden(bool){
+ 			@mixin blockorhidden($bool:true){
  				@if bool {
  					display:block;
  				}@else{
@@ -297,6 +297,36 @@
 			.hidden{
 				@include blockorhidden(false);
 			}
+			编译结果：
+			.block {
+			  display: block; }
+
+			.hidden {
+			  display: none; }
+	2.@for 
+		a.@for $i from <start> to <end>
+		  @for $i from <start> through <end>
+		b.strat 起始位置 end结束位置 $i表示变量。
+		  to 不包括 end、through 包括end
+		c.示例：
+			@mixin forspan($num){
+				@for $i from 1 to $num{
+					.span#{$i}{
+						width:10px;
+					}
+				}
+			}
+			div{
+				@include forspan(4);
+			}
+			编译结果：
+			div .span1 {
+			  width: 10px; }
+			div .span2 {
+			  width: 10px; }
+			div .span3 {
+			  width: 10px; }
+
 		
 	
 	
