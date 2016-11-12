@@ -278,8 +278,25 @@
 				width:$width1 / 2;
 				color:$color2 / 2;
 			}
-
-			
+ 二、sass的进阶
+ 	1.@if:的使用
+ 		a.和其他语言的if语句基本相似
+ 			@if bool {}或者 @if bool{}@else{} 或者 
+ 			@if bool {} @else if bool {}
+ 		b.示例：
+ 			@mixin blockorhidden(bool){
+ 				@if bool {
+ 					display:block;
+ 				}@else{
+ 					display:none;
+ 				}
+ 			}
+ 			.block{
+ 				@include blockorhidden(true);
+ 			}
+			.hidden{
+				@include blockorhidden(false);
+			}
 		
 	
 	
