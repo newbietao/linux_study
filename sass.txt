@@ -326,9 +326,28 @@
 			  width: 10px; }
 			div .span3 {
 			  width: 10px; }
-
+	3.@while
 		
-	
+		$width:20px;
+		$count:4;
+		@while $count >= 1 {
+			.span#{$count} {
+				width: $width * $count;
+			}
+			$count:$count - 1;
+		}
+		编译结果：
+		.span4 {
+		  width: 80px; }
+
+		.span3 {
+		  width: 60px; }
+
+		.span2 {
+		  width: 40px; }
+
+		.span1 {
+		  width: 20px; }
 	
 	
 	
