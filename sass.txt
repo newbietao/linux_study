@@ -592,7 +592,21 @@
 			  width: 17px; }
 
 		d.append($list,$val):将某个值添加到列表后
+			$list:12px 13px 14px ;
+			.div{
+				content:append($list,15px);
+			}
+			编译结果：
+			.div {
+			  content: 12px 13px 14px 15px; }
 		e.index($list,$val):返回某个值在列表中的位置
+			$list : 13px 12px 14px;
+			.div{
+				content:"13px in list :"index($list,13px);
+			}
+			编译结果：
+			.div {
+			  content: "13px in list :" 1; }
 	4.introspection函数
 		a.type-of($val):返回一个值的类型
 		b.unit($num):返回一个值的单位
