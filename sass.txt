@@ -680,6 +680,17 @@
 			.div1 {
 			  color: #f00; }
 		c.map-merge($map1,$map2):将两个map合并成一个map
+			$map:(
+				red : #f00,
+				green : #0f0,
+				blue : #00f
+			);
+			.div1{
+				color:map-get($map,red);
+			}
+			编译结果：
+			div {
+			  content: man; }
 		d.map-remove($map,$key):从map中删除一个key，符返回一个新的map
 		e.map-keys($map):返回map中的所有key
 		f.map-values($map):返回map中的所有value;
