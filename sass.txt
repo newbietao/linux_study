@@ -612,7 +612,28 @@
 		b.unit($num):返回一个值的单位
 		c.unitless($num):判断一个数值是否带值单位
 		d.comparable($num1,$num2):判断两个值是否可以进行加减合并。
-		
+		@mixin clo($width:50%){
+			@if type-of($width) != number{//判断是否是数字
+				@error "input must be a number, your input is a #{$width}";
+			}
+			@if not unitless($width){//判断是否有单位
+				@if unit($width) != "%"{//判断单位是否是%
+					@error "input must be a bercentage, your input is a #{$width}";
+				}
+			} @else{//转化为百分比
+				@warn "input must be a bercentage, your input is a #{$width}";
+				$width : percentage($width/100);
+			}
+			width:$width;
+		}
+		div{
+			@include clo(12);
+		}
+		控制台输出：
+		WARNING: input must be a bercentage, your input is a 12
+		编译结果：
+		div {
+		  width: 12%; }
 	5.三元条件函数
 		if($bool,$val1,$val2);
 		$bool为真，返回$val1,为假返回$val2;
