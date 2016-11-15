@@ -400,8 +400,43 @@
 
 			.str4 {
 			  content: "hello"; }
-		b.quote($str);函数给字符串添加引号4
-		
+		b.quote($str);函数给字符串添加引号
+			$str1 : hello;
+			$str2 : "hello";
+			$str3 : 'hello';
+			.str1{
+				content:quote($str1);
+			}
+			.str2{
+				content:quote($str2);
+			}
+			.str3{
+				content:quote($str3);
+			}
+			编译结果：
+			.str1 {
+			  content: "hello"; }
+
+			.str2 {
+			  content: "hello"; }
+
+			.str3 {
+			  content: "hello"; }
+		c.To-upper-case\To-lower-case
+			1)to-upper-case:将小写字母变成大写字母、to-lower-case:将大写字母变为小写字母
+				.toUp{
+					content:to-upper-case("hello");
+				}
+				.toLow{
+					content:to-lower-case("HELLO");
+				}
+				编译结果：
+				.toUp {
+				  content: "HELLO"; }
+
+				.toLow {
+				  content: "hello"; }
+			
 	
 	
 	
