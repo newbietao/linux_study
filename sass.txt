@@ -554,6 +554,15 @@
 			.span {
 	 		 	content: "list length is 3"; }
 		b.nth($list,$n):返回列表指定的某个标签的值
+			$list: 12px 13px 14px;
+			.div{
+				width:nth($list,2);
+				height:nth($list,1);
+			}
+			编译结果：
+			.div {
+			  width: 13px;
+			  height: 12px; }
 		c.join($list1,$list2,[$separator]):将两个列表链接成一个列表
 		d.append($list,$val):将某个值添加到列表后
 		e.index($list,$val):返回某个值在列表中的位置
