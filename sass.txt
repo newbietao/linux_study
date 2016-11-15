@@ -564,6 +564,33 @@
 			  width: 13px;
 			  height: 12px; }
 		c.join($list1,$list2,[$separator]):将两个列表链接成一个列表
+			$list1:12px 13px 14px;
+			$list2:15px 16px 17px;
+			$list3:join($list1,$list2);
+			@each $width in $list3{
+				.div{
+					width:#{$width};
+				}
+			} 
+			编译结果：
+			.div {
+			  width: 12px; }
+
+			.div {
+			  width: 13px; }
+
+			.div {
+			  width: 14px; }
+
+			.div {
+			  width: 15px; }
+
+			.div {
+			  width: 16px; }
+
+			.div {
+			  width: 17px; }
+
 		d.append($list,$val):将某个值添加到列表后
 		e.index($list,$val):返回某个值在列表中的位置
 	4.introspection函数
