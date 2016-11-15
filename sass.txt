@@ -348,8 +348,60 @@
 
 		.span1 {
 		  width: 20px; }
+	4.@each
+		$list : img1 img2 img3 imd4;
+		@each $img in $list{
+			.#{$img} {
+				background-image:url("img/#{$img}.jpg"); 
+			}
+		}
+		编译结果：
+		.img1 {
+		  background-image: url("img/img1.jpg"); }
+
+		.img2 {
+		  background-image: url("img/img2.jpg"); }
+
+		.img3 {
+		  background-image: url("img/img3.jpg"); }
+
+		.imd4 {
+		  background-image: url("img/imd4.jpg"); }
 	
-	
+三、sass函数
+	1.字符串函数：
+		a.unquote($str);函数删除字符串中的引号
+			$str1 : "hello";
+			$str2 : "'hello'";
+			$str3 : "I'm hantao";
+			$str4 : '"hello"'; 
+
+			.str1{
+				content: unquote($str1);
+			}
+			.str2{
+				content: unquote($str2);
+			}
+			.str3{
+				content: unquote($str3);
+			}
+			.str4{
+				content: unquote($str4);
+			}
+			编译结果：
+			.str1 {
+			  content: hello; }
+
+			.str2 {
+			  content: 'hello'; }
+
+			.str3 {
+			  content: I'm hantao; }
+
+			.str4 {
+			  content: "hello"; }
+		b.quote($str);函数给字符串添加引号4
+		
 	
 	
 	
