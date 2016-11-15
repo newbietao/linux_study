@@ -457,6 +457,30 @@
 			.div3 {
 			  width: 40%; }
 		b.round($num):将一个数值进行四舍五入
+			.div1{
+				width:round(12.4px);
+			}
+			.div2{
+				width:round(12.4999px);
+			}
+			.div3{
+				width:round(12.5111px);
+			}
+			.div4{
+				width:round(12.9999px);
+			}
+			编译结果：
+			.div1 {
+			  width: 12px; }
+
+			.div2 {
+			  width: 12px; }
+
+			.div3 {
+			  width: 13px; }
+
+			.div4 {
+			  width: 13px; }
 		c.ceil($num):向上取整
 		d.floor($num):向下取整
 		e.min($num....):找到几个数值的最小值
