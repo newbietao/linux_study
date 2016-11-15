@@ -437,7 +437,25 @@
 				.toLow {
 				  content: "hello"; }
 	2.数字函数：
-		a.percentage($num):将一个不带参数的数字转换为百分比值;
+		a.percentage($num):将一个不带单位的数字转换为百分比值;
+			.div1{
+				width:percentage(0.2);
+			}
+			.div2{
+				width:percentage(2px / 10px);
+			}
+			.div3{
+				width:percentage(2em / 5em);
+			}
+			编译结果：
+			.div1 {
+			  width: 20%; }
+
+			.div2 {
+			  width: 20%; }
+
+			.div3 {
+			  width: 40%; }
 		b.round($num):将一个数值进行四舍五入
 		c.ceil($num):向上取整
 		d.floor($num):向下取整
@@ -455,10 +473,25 @@
 		a.type-of($val):返回一个值的类型
 		b.unit($num):返回一个值的单位
 		c.unitless($num):判断一个数值是否带值单位
-		d.comparable($num1,$num2):
-	5.map函数
-	6.颜色函数
-	7.@指令：
+		d.comparable($num1,$num2):判断两个值是否可以进行加减合并。
+	5.三元条件函数
+		if($bool,$val1,$val2);
+		$bool为真，返回$val1,为假返回$val2;
+	6.map函数
+		a.map的定义
+		b.map-get($map,$key):根据给定的key值，返回map中相关的值
+		c.map-merge($map1,$map2):将两个map合并成一个map
+		d.map-remove($map,$key):从map中删除一个key，符返回一个新的map
+		e.map-keys($map):返回map中的所有key
+		f.map-values($map):返回map中的所有value;
+	7.rgb函数
+		a.rgb($red,$green,$blue):根据红绿蓝创建一个颜色
+		b.rgba($red,$green,$blue,$alpha):根据红绿蓝和透明度创建一个颜色
+		c.red($color):从一个颜色中获取红色的值
+		d.green($color):从一个颜色中获取绿色的值
+		e.blue($color):从一个颜色中获取蓝色的值
+		f.mix($color1,$color2):把两种颜色混合到一起
+	8.@指令：
 		a.@import
 		b.@media
 		c.@extend
