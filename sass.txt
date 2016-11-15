@@ -522,7 +522,21 @@
 			  width: 12px; }
 		f.min($num....):找到几个数值的最小值
 		g.max($num...):找到几个数中的最大值
-			
+			$num1 : 12px;
+			$num2 : 23px;
+			$num3 : 10px;
+			.max{
+				width:max($num1,$num2,$num3);
+			}
+			.min{
+				width:min($num1,$num2,$num3);
+			}
+			编译结果：
+			.max {
+			  width: 23px; }
+
+			.min {
+			  width: 10px; }
 		h.random():获取随机数
 	3.列表函数
 		a.length($list):返回列表长度
