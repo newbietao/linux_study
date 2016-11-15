@@ -508,8 +508,21 @@
 			.floor2 {
 			  width: 12px; }
 		e.abs($num):返回一个数的绝对值
+			.div1{
+				width:abs(-12px);
+			}
+			.div2{
+				width:abs(12px);
+			}
+			编译结果：
+			.div1 {
+			  width: 12px; }
+
+			.div2 {
+			  width: 12px; }
 		f.min($num....):找到几个数值的最小值
 		g.max($num...):找到几个数中的最大值
+			
 		h.random():获取随机数
 	3.列表函数
 		a.length($list):返回列表长度
