@@ -654,12 +654,12 @@
 			将数据以key:value的形式赋予，其中key和value是成对出现，并且每对之间使用逗号
 			分割，其中最后一组后面没有逗号。
 			
-			$map1(
+			$map1:(
 				key1:val1,
 				key2:val2,
 				key3:val3
 			);
-			$map2(
+			$map2:(
 				key1:val1,
 				key2:(
 					key-1:val-1,
@@ -668,6 +668,17 @@
 				key3:val3
 			)
 		b.map-get($map,$key):根据给定的key值，返回map中相关的值
+			$map:(
+				red : #f00,
+				green : #0f0,
+				blue : #00f
+			);
+			.div1{
+				color:map-get($map,red);
+			}
+			编译结果：
+			.div1 {
+			  color: #f00; }
 		c.map-merge($map1,$map2):将两个map合并成一个map
 		d.map-remove($map,$key):从map中删除一个key，符返回一个新的map
 		e.map-keys($map):返回map中的所有key
