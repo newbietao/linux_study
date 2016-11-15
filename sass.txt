@@ -436,6 +436,37 @@
 
 				.toLow {
 				  content: "hello"; }
+	2.数字函数：
+		a.percentage($num):将一个不带参数的数字转换为百分比值;
+		b.round($num):将一个数值进行四舍五入
+		c.ceil($num):向上取整
+		d.floor($num):向下取整
+		e.min($num....):找到几个数值的最小值
+		f.abs($num):返回一个数的绝对值
+		g.max($num...):找到几个数中的最大值
+		h.random():获取随机数
+	3.列表函数
+		a.length($list):返回列表长度
+		b.nth($list,$n):返回列表指定的某个标签的值
+		c.join($list1,$list2,[$separator]):将两个列表链接成一个列表
+		d.append($list,$val):将某个值添加到列表后
+		e.index($list,$val):返回某个值在列表中的位置
+	4.introspection函数
+		a.type-of($val):返回一个值的类型
+		b.unit($num):返回一个值的单位
+		c.unitless($num):判断一个数值是否带值单位
+		d.comparable($num1,$num2):
+	5.map函数
+	6.颜色函数
+	7.@指令：
+		a.@import
+		b.@media
+		c.@extend
+		d.@at-root
+		e.@debug
+		f.@warn
+		g.@error
+		
 			
 	
 	
