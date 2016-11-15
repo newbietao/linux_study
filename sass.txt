@@ -545,7 +545,14 @@
 			.random1 {
 	 			 width: 0.79395px; }
 	3.列表函数
-		a.length($list):返回列表长度
+		a.length($list):返回列表长度，length的参数要用空格分开不能使用逗号
+			$list : 12px 13px 14px;
+			.span{
+				content:"list length is #{length($list)}"
+			}
+			编译结果：
+			.span {
+	 		 	content: "list length is 3"; }
 		b.nth($list,$n):返回列表指定的某个标签的值
 		c.join($list1,$list2,[$separator]):将两个列表链接成一个列表
 		d.append($list,$val):将某个值添加到列表后
