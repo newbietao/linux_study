@@ -456,7 +456,7 @@
 
 			.div3 {
 			  width: 40%; }
-		b.round($num):将一个数值进行四舍五入
+		b.round($num):将一个数值进行四舍五入，注意小数点后的位数不要太多。
 			.div1{
 				width:round(12.4px);
 			}
@@ -483,8 +483,32 @@
 			  width: 13px; }
 		c.ceil($num):向上取整
 		d.floor($num):向下取整
-		e.min($num....):找到几个数值的最小值
-		f.abs($num):返回一个数的绝对值
+			.ceil1{
+				width:ceil(12.1px);
+			}
+			.ceil2{
+				width:ceil(12.9px);
+			}
+			.floor1{
+				width:floor(12.1px);
+			}
+			.floor2{
+				width:floor(12.9px);
+			}
+			编译结果：
+			.ceil1 {
+			  width: 13px; }
+
+			.ceil2 {
+			  width: 13px; }
+
+			.floor1 {
+			  width: 12px; }
+
+			.floor2 {
+			  width: 12px; }
+		e.abs($num):返回一个数的绝对值
+		f.min($num....):找到几个数值的最小值
 		g.max($num...):找到几个数中的最大值
 		h.random():获取随机数
 	3.列表函数
