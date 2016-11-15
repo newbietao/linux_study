@@ -537,7 +537,13 @@
 
 			.min {
 			  width: 10px; }
-		h.random():获取随机数
+		h.random():获取随机数，范围是0～1;
+			.random1{
+				width:random()+px;
+			}
+			编译结果：
+			.random1 {
+	 			 width: 0.79395px; }
 	3.列表函数
 		a.length($list):返回列表长度
 		b.nth($list,$n):返回列表指定的某个标签的值
