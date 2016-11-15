@@ -224,7 +224,7 @@
 					width:500px;
 					height:800px;
 				}
-		6.插值：#{}
+		6.插值：#{}，在选择器、属性名、字符串中使用
 			a.#{}不能在@mixin中使用
 			b.在构建选择器中使用
 				$btn:bnt;
@@ -612,9 +612,20 @@
 		b.unit($num):返回一个值的单位
 		c.unitless($num):判断一个数值是否带值单位
 		d.comparable($num1,$num2):判断两个值是否可以进行加减合并。
+		
 	5.三元条件函数
 		if($bool,$val1,$val2);
 		$bool为真，返回$val1,为假返回$val2;
+		$bool1:true;
+		$bool2:false;
+		.div{
+			width:if($bool1,12px,21px);
+			height:if($bool2,12px,21px);
+		}
+		编译结果：
+		.div {
+		  width: 12px;
+		  height: 21px; }
 	6.map函数
 		a.map的定义
 		b.map-get($map,$key):根据给定的key值，返回map中相关的值
