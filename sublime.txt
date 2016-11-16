@@ -1,0 +1,91 @@
+一、插件篇
+	1.Package Control：
+		a.简介：这个是你在完成安装SublimeText后必须安装的东西。你问为什么？
+		因为有了这个特殊的“插件包”，你可以很容易地安装、升级、删除，甚至非常方便地查看您已
+		经安装在SublimeText中的包或插件的列表。它通过菜单和对应的行为使这些过程变得非常
+		容易和有组织。
+		b.安装：
+			1.点击Preferences > Browse Packages菜单
+			2.进入打开的目录的上层目录，然后再进入Installed Packages/目录
+			3.下载 Package Control.sublime-package 并复制到Installed Packages/目录
+			  下载地址：https://github.com/wbond/sublime_package_control
+			4.重启Sublime Text。
+		c.使用：
+			快捷键 Ctrl+Shift+P（菜单 – Tools – Command Paletter），输入 install 
+			选中Install Package并回车，输入或选择你需要的插件回车就安装了（注意左下角
+			的小文字变化，会提示安装成功）。
+	2.Emmet：
+		a.简介：
+			概括地说，Emmet（译者注：前身就是以前大名鼎鼎的Zen Coding，）是一个可以让
+			你更快更高效地编写HTML和CSS，节省你大量时间的插件。
+		b.安装：
+			在安装Package Control的前提下，快捷键 Ctrl+Shift+P，输入 install 
+			选中Install Package并回车，输入Emmet，回车就安装了
+		c.使用
+	2.Emmet：
+		a.简介：
+		b.安装
+		c.使用
+	2.Emmet：
+		a.简介：
+		b.安装
+		c.使用
+	2.Emmet：
+		a.简介：
+		b.安装
+		c.使用
+二、使用技巧篇
+三、常见快捷键
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
