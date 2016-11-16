@@ -84,10 +84,11 @@
 		b.安装：在安装Package Control的前提下，快捷键 Ctrl+Shift+P，输入 install 
 			选中Install Package并回车，输入Terminal，并选择Terminal，回车就安装了
 		c.使用：快捷键：ctrl+shift+T
-	2.Emmet：
-		a.简介：
-		b.安装
-		c.使用
+	2.ColorPicker：
+		a.简介：这个插件可以很方便地调用你本机的调色板应用。
+		b.安装：在安装Package Control的前提下，快捷键 Ctrl+Shift+P，输入 install 
+			选中Install Package并回车，输入ColorPicker，并选择ColorPicker，回车就安装了
+		c.使用：快捷键：ctrl+shift+c
 	2.Emmet：
 		a.简介：
 		b.安装
