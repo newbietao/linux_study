@@ -79,10 +79,11 @@
 					<li class="list3">list3</li>
 				</ul>
 				
-	2.Emmet：
-		a.简介：
-		b.安装
-		c.使用
+	2.Terminal：
+		a.简介：Terminal插件可以让用户使用快捷键ctrl+shift+T快速打开文件所在位置的终端
+		b.安装：在安装Package Control的前提下，快捷键 Ctrl+Shift+P，输入 install 
+			选中Install Package并回车，输入Terminal，并选择Terminal，回车就安装了
+		c.使用：快捷键：ctrl+shift+T
 	2.Emmet：
 		a.简介：
 		b.安装
