@@ -79,23 +79,99 @@
 					<li class="list3">list3</li>
 				</ul>
 				
-	2.Terminal：
+	3.Terminal：
 		a.简介：Terminal插件可以让用户使用快捷键ctrl+shift+T快速打开文件所在位置的终端
 		b.安装：在安装Package Control的前提下，快捷键 Ctrl+Shift+P，输入 install 
 			选中Install Package并回车，输入Terminal，并选择Terminal，回车就安装了
 		c.使用：快捷键：ctrl+shift+T
-	2.ColorPicker：
+	4.ColorPicker：
 		a.简介：这个插件可以很方便地调用你本机的调色板应用。
 		b.安装：在安装Package Control的前提下，快捷键 Ctrl+Shift+P，输入 install 
 			选中Install Package并回车，输入ColorPicker，并选择ColorPicker，回车就安装了
 		c.使用：快捷键：ctrl+shift+c
-	2.Emmet：
-		a.简介：
-		b.安装
-		c.使用
+	5.SASS Build：
+		a.简介：编译sass文件的插件
+		b.安装：在安装Package Control的前提下，快捷键 Ctrl+Shift+P，输入 install 
+			选中Install Package并回车，输入SASS Build，并选择SASS Build，回车就安装了
+		c.使用：安装好插件后打开tools，选择build system 选择sass，ctrl+b就可以编译sass文件，
+		  改变生成的css文件的路径，打开preferences在打开browse packages.然后进入上一
+		  层目录，然后在进入Installed Packages目录，在打开SASS Build.sublime-package
+		  然后对SASS.sublime-build里的内容进行编译就可以了。
+	6.CSS3：高亮显示css3语法
+	7.jQuery：提示jquery代码
+	8.HTML-CSS-JS Prettify：代码格式化工具：压缩后的代码：可以进行还原。
+	  快捷键：Ctrl+Shift+H
+	9.ColorHighlighter：
+		a.简介：它可以展示你所选择的颜色代码（像“#FFFFFF”, “rgb(255,255,255)”, 
+			“white”）的真正颜色。同时它还包含一个颜色选择器让你可以方便地更改颜色。
+	10.BracketHighlighter：括号以及标签层级显示，不用担心选中的代码属于哪个代码块，一目了然。
+	11.JavaScript Completions：支持javascript原生语法提示
+	以上的插件的安装都基本相同，不一一介绍。
 二、使用技巧篇
+	1.多行游标：使用ctrl+d快捷键，选词 （反复按快捷键，即可继续向下同时选中下一个相同的文
+	  本进行同时编辑），ctrl+k可以放弃一个游标。
+	2.待续
 三、常见快捷键
+	Ctrl+D 选词 （反复按快捷键，即可继续向下同时选中下一个相同的文本进行同时编辑）
+	Ctrl+G 跳转到相应的行
+	Ctrl+J 合并行（已选择需要合并的多行时）
+	Ctrl+L 选择整行（按住-继续选择下行）
+	Ctrl+M 光标移动至括号内开始或结束的位置
+	Ctrl+T 词互换
+	Ctrl+U 软撤销
+	Ctrl+P 查找当前项目中的文件和快速搜索；输入 @ 查找文件主标题/函数；或者输入 : 跳转到文件某行；
+	Ctrl+R 快速列出/跳转到某个函数
+	Ctrl+K Backspace 从光标处删除至行首
+	Ctrl+K+B 开启/关闭侧边栏
+	Ctrl+KK 从光标处删除至行尾
+	Ctrl+K+T 折叠属性
+	Ctrl+K+U 改为大写
+	Ctrl+K+L 改为小写
+	Ctrl+K+0 展开所有
+	Ctrl+Enter 插入行后（快速换行）
+	Ctrl+Tab 当前窗口中的标签页切换
 
+	Ctrl+Shift+A 选择光标位置父标签对儿
+	Ctrl+Shift+D 复制光标所在整行，插入在该行之前
+	ctrl+shift+F 在文件夹内查找，与普通编辑器不同的地方是sublime允许添加多个文件夹进行查找
+	Ctrl+Shift+K 删除整行
+	Ctrl+Shift+L 鼠标选中多行（按下快捷键），即可同时编辑这些行
+	Ctrl+Shift+M 选择括号内的内容（按住-继续选择父括号）
+	Ctrl+Shift+P 打开命令面板
+	Ctrl+Shift+/ 注释已选择内容
+	Ctrl+Shift+↑可以移动此行代码，与上行互换
+	Ctrl+Shift+↓可以移动此行代码，与下行互换
+	Ctrl+Shift+[ 折叠代码
+	Ctrl+Shift+] 展开代码
+	Ctrl+Shift+Enter 光标前插入行
+
+	Ctrl+PageDown 、Ctrl+PageUp 文件按开启的前后顺序切换
+
+	Ctrl+Z 撤销
+	Ctrl+Y 恢复撤销
+	Ctrl+F2 设置/取消书签
+	Ctrl+/ 注释整行（如已选择内容，同“Ctrl+Shift+/”效果）
+	Ctrl+鼠标左键 可以同时选择要编辑的多处文本
+
+
+	Shift+鼠标右键（或使用鼠标中键）可以用鼠标进行竖向多行选择
+	Shift+F2 上一个书签
+	Shift+Tab 去除缩进
+	Alt+Shift+W 环绕标签
+	Alt+Shift+1（非小键盘）窗口分屏，恢复默认1屏
+	Alt+Shift+2 左右分屏-2列
+	Alt+Shift+3 左右分屏-3列
+	Alt+Shift+4 左右分屏-4列
+	Alt+Shift+5 等分4屏
+	Alt+Shift+8 垂直分屏-2屏
+	Alt+Shift+9 垂直分屏-3屏
+
+	Ctrl+Shift+分屏序号 将当前焦点页分配到分屏序号页
+
+	Alt+. 闭合当前标签
+	Alt+F3 选中文本按下快捷键，即可一次性选择全部的相同文本进行同时编辑
+
+	Tab 缩进 自动完成
 
 
 
