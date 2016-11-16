@@ -20,8 +20,65 @@
 			你更快更高效地编写HTML和CSS，节省你大量时间的插件。
 		b.安装：
 			在安装Package Control的前提下，快捷键 Ctrl+Shift+P，输入 install 
-			选中Install Package并回车，输入Emmet，回车就安装了
+			选中Install Package并回车，输入Emmet，并选择Emmet，回车就安装了
 		c.使用
+			1、新建文件-输入"html:xt"后  按"Ctrl+E键"或 "tab键" ,可快速生成xhtml 1.0的模板
+			2、新建文件-输入"html:5"后   按"Ctrl+E键"或 "tab键" ,可快速生成HTML5的模板
+			3、新建文件-输入"!"后   按"Ctrl+E键"或 "tab键" ,可快速生成HTML5的模板
+			4、简写Div：输入div.container或者.container,按tab建就可以生成
+				<div class="container"></div>的代码。
+			5、含糊标签名称：你不需要指定div或者li，Emmet会自动帮助你生成，如下：
+			   输入.wrap>ul.list>.sites按tab键
+			   <div class="wrap">
+					<ul class="list">
+						<li class="sites"></li>
+					</ul>
+				</div>
+			6、带有DOM导航的链式缩写
+				> 子节点：在DOM树下一层添加创建一个元素
+				+ 同级别：在DOM树同一层添加创建一个元素
+				^ 向上层：向上一层添加创建创建一个元素。
+				输入.outer>.inner>h1+p按tab：
+				<div class="outer">
+					<div class="inner">
+						<h1></h1>
+						<p></p>
+					</div>
+				</div>
+				输入：.wrap>p>a^p按tab
+				<div class="wrap">
+					<p><a href=""></a></p>
+					<p></p>
+				</div>
+			7、分组：使用括号进行分组
+				输入：(.one>h1)+(.two>h1)按tab键
+				<div class="one">
+					<h1></h1>
+				</div>
+				<div class="two">
+					<h1></h1>
+				</div>
+			8、插入文本和属性：属性在中括号中，文本在大括号中
+				输入div[class="container"]{test}按tab
+				<div class="container">test</div>
+			9、添加多个class到一个元素
+				输入 .one.two.three 按tab
+				<div class="one two three"></div>
+			10、 重复添加
+				输入ul>li*3按tab
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			11、自动列表记数 
+				输入：ul>li.list${list$}*3按tab
+				<ul>
+					<li class="list1">list1</li>
+					<li class="list2">list2</li>
+					<li class="list3">list3</li>
+				</ul>
+				
 	2.Emmet：
 		a.简介：
 		b.安装
