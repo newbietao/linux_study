@@ -129,7 +129,17 @@
 			width: 100px;
 			height: 100%;
 			margin: 10em;
-		b.
+		b.模糊匹配：如果有些缩写你拿不准，Emmet会根据你的输入内容匹配最接近的语法，
+		  比如输入ov:h、ov-h、ovh和oh，生成的代码是相同的：overflow: hidden;
+		c.供应商前缀
+			1、如果输入非W3C标准的CSS属性，Emmet会自动加上供应商前缀，比如输入trs，则会生成：
+			2、可以在任意属性前加上“-”符号，也可以为该属性加上前缀。比如输入-super-foo：
+			3、如果不希望加上所有前缀，可以使用缩写来指定，比如-wm-trf表示只加上-webkit和-moz前缀：
+			前缀缩写如下：
+			w 表示 -webkit-
+			m 表示 -moz-
+			s 表示 -ms-
+			o 表示 -o-
 三、常见快捷键
 
 	1.通用（General）
