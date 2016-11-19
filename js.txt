@@ -86,6 +86,12 @@
 		
 		}
 	d.冒泡：
+		addEventListener("event",callback,bool);//顺序执行
+		//this：事件源
+		//bool：默认false，冒泡。true：事件捕获。
+		//先捕获后冒泡
+		attachEvent("onEvent",callback);//执行顺序相反
+		//this：window
 		
 		
 		
