@@ -79,8 +79,17 @@
 			使用wget 指定用户和密码下载 ftp
 			wget --ftp-user=username --ftp-password=passwd url
 	                 
-                   
-                   
+5.安装Zeal
+	打开终端，下面三条命令就OK了：
+	$ sudo add-apt-repository ppa:zeal-developers/ppa
+	$ sudo apt-get update
+	$ sudo apt-get install zeal
+	但是有的时候你有可能出现这样的错误：Unable to lock the administration 
+	directory (/var/lib/dpkg/) is another process using it?没关系，下面两条命令就可以搞定这个问题：
+	$ sudo rm /var/lib/apt/lists/lock
+	$ sudo rm /var/cache/apt/archives/lock
+	这么Cool的软件就安装完了，秀一下我的界面。      
+		               
                    
                    
                    
