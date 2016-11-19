@@ -1,0 +1,122 @@
+1.变量：
+	a.弱类型的语言
+	b.var 关键字
+	c.基本数据类型：
+		number：数字
+		string：字符串
+		boolean：布尔
+		null:空
+		undefined：未定义
+	d.类型检测：typeof
+		var a = 134;
+		console.log(typeof a);//number
+	e.命名：
+		不能数字开头
+		不能中文
+		不能-
+2.script标签的位置：
+	body下面：所有标签都加载完毕，才执行js。但是图片和音乐或者其他资源，并不能使用js获取到。
+	header里面：window.onload是所有资源加载完毕才能，执行js。
+3.for(var i in arr){
+}
+4.内置对象：
+	a.array:数组
+		length（）：数组长度
+		concat（）:链接一个数组
+		join（）：把数组中的所有元素放在一个字符串中
+		push（）：向数组末尾添加一个元素
+		pop（）：删除并返回数组最后一个数
+		reverse（）：颠倒数组顺序
+		sort（）：排序，
+		参数：function(a,b)
+			return a-b;//升序
+			return b-a;//降序
+		}
+	b.Math:数学
+		Math.random();//产生随机数
+		Math.ceil();//向上取整
+		Math.floor();//向下取整
+		Math.abs();//绝对值
+		Math.round();//四舍五入
+		Math.pow(x,y);//x的y次幂
+	c.string:字符串
+		charAt();//返回指定位置的字符
+		indexOf();//返回指定字符串在字符串的位置
+		substring(start,stop);//提取字符
+		split();//用指定的分隔符，分割字符串
+5.window对象：
+	scroll:滚动条
+	navigator.userAgent：返回浏览器信息
+	location：
+		herf：
+		hostname:
+6.dom
+	a.children:
+	b.childNodes
+	c.nodeType
+	d.firstchild
+	e.firstElementChild//兼容性问题
+	f.nextSibling
+	function next(elem){
+		do{
+			elem = elem.nextSibling;
+		}while(elem && elem.nodeType != 1);
+		return elem;
+	}
+	function firstchild(){
+		elem = elem.firstchild;
+		return elem && (elem.nodeType == 1?elem:next(elem));
+	}
+7.事件：
+	a.事件源
+		1.oncroll = function(e){
+			var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+		}
+		2.oncontextmenu = function(e){
+			e = e||event;
+			e.clientX;
+		}
+		3.onfocus = function(){
+			
+		}
+	b.事件处理函数、
+	c.事件对象：
+		oncontextmenu = function(e){
+			var target = e.target || window.event.srcElement;
+		
+		}
+	d.冒泡：
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
