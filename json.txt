@@ -113,10 +113,6 @@
 
 		例如：
 
-		var last=obj.toJSONString(); //将JSON对象转化为JSON字符
-
-		或者
-
 		var last=JSON.stringify(obj); //将JSON对象转化为JSON字符
 
 		alert(last);

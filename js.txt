@@ -92,6 +92,8 @@
 		//先捕获后冒泡
 		attachEvent("onEvent",callback);//执行顺序相反
 		//this：window
+		e.stopPropagation();//现代浏览器，阻止冒泡;
+		cancelBabel();//IE阻止事件冒泡
 		
 		
 		
