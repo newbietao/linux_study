@@ -252,7 +252,29 @@
 
 		第三种方法对于定义纯JSON数据的模块非常合适。
 	3.模块的载入和引用
+		
 	4.SeaJS的全局配置
+		SeaJS提供了一个seajs.config方法可以设置全局配置，接收一个表示全局配置的配置对象。
+		具体使用方法如下：
+		seajs.config({
+			base: 'path/to/jslib/',
+			alias: {
+			  'app': 'path/to/app/'
+			},
+			charset: 'utf-8',
+			timeout: 20000,
+			debug: false
+		});
+
+		其中base表示基址寻址时的基址路径。例如base设置为 http://example.com/js/3-party/ ，则:
+		var $ = require('jquery');
+
+		会载入 http://example.com/js/3-party/jquery.js 。
+		alias可以对较长的常用路径设置缩写。
+		charset表示下载js时script标签的charset属性。
+		timeout表示下载文件的最大时长，以毫秒为单位。
+		debug表示是否工作在调试模式下。
+
 三、总结：
 
 
