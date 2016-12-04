@@ -15,6 +15,30 @@
 		 Require all granted
 		</Directory>
 		</VirtualHost>
+<VirtualHost *:80>
+ ServerName www.a.com
+ DocumentRoot "/opt/lampp/htdocs/servertest/ajax/jsonp/a"
+<Directory "/opt/lampp/htdocs/servertest/ajax/jsonp/a"> 
+ Options FollowSymLinks IncludesNOEXEC Indexes
+ DirectoryIndex index.html index.htm index.php
+ AllowOverride all 
+ Order Deny,Allow 
+ Allow from all 
+ Require all granted
+</Directory>
+</VirtualHost>
+<VirtualHost *:80>
+ ServerName www.b.com
+ DocumentRoot "/opt/lampp/htdocs/servertest/ajax/jsonp/b"
+<Directory "/opt/lampp/htdocs/servertest/ajax/jsonp/b"> 
+ Options FollowSymLinks IncludesNOEXEC Indexes
+ DirectoryIndex index.html index.htm index.php
+ AllowOverride all 
+ Order Deny,Allow 
+ Allow from all 
+ Require all granted
+</Directory>
+</VirtualHost>
 	4.修改host文件
 		a.windows系统：打开C盘，依次找到下面的目录：windows目录--system32目录
 		--drivers目录--etc目录--找到hosts文件，使用编辑器打开；

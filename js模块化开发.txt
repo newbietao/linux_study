@@ -1,0 +1,64 @@
+				js模块化开发
+一、require.js
+	1.作用：
+		RequireJS是一个非常小巧的JavaScript模块载入框架，是AMD规范最好的实现者之一。
+		最新版本的RequireJS压缩后只有14K，堪称非常轻量。它还同时可以和其他的框架协同工作，
+		使用RequireJS必将使您的前端代码质量得以提升。
+	2.使用方法
+		正常编写方式
+		index.html:
+		<!DOCTYPE html>
+		<html>
+			<head>
+				<script type="text/javascript" src="a.js"></script>
+			</head>
+			<body>
+			  <span>body</span>
+			</body>
+		</html>
+		a.js:
+		function fun1(){
+		  alert("it works");
+		}
+
+		fun1();
+		可能你更喜欢这样写
+		(function(){
+			function fun1(){
+			  alert("it works");
+			}
+
+			fun1();
+		})()
+		第二种方法使用了块作用域来申明function防止污染全局变量，本质还是一样的，
+		当运行上面两种例子时不知道你是否注意到，alert执行的时候，html内容是一片空白的，
+		即<span>body</span>并未被显示，当点击确定后，才出现，这就是JS阻塞浏览器渲染导致的结果。
+		requirejs写法
+		当然首先要到requirejs的网站去下载js -> requirejs.org
+		index.html:
+		<!DOCTYPE html>
+		<html>
+			<head>
+				<script type="text/javascript" src="require.js"></script>
+				<script type="text/javascript">
+				    require(["a"]);
+				</script>
+			</head>
+			<body>
+			  <span>body</span>
+			</body>
+		</html>
+		a.js:
+		define(function(){
+			function fun1(){
+			  alert("it works");
+			}
+
+			fun1();
+		})
+	3.基本api
+	4.加载文件
+	5.全局配置
+二、sea.js
+三、总结：
+
