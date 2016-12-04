@@ -252,7 +252,7 @@
 
 		第三种方法对于定义纯JSON数据的模块非常合适。
 	3.模块的载入和引用
-		seajs.use
+		1)seajs.use
 		seajs.use主要用于载入入口模块。入口模块相当于C程序的main函数，同时也是整个模块
 		依赖树的根。上面在TinyApp小例子中，init就是入口模块。seajs.use用法如下：
 		复制代码 代码如下:
@@ -289,7 +289,7 @@
 		</html>
 
 		这种写法会令html更加简洁。
-		require
+		2)require
 		require是SeaJS主要的模块加载方法，当在一个模块中需要用到其它模块时一般用require加载：
 		复制代码 代码如下:
 		var m = require('/path/to/module/file');
@@ -301,7 +301,7 @@
 		依赖所以整个依赖数据结构是一个图而不是树）。
 		明白了上面这一点，下面的规则就很好理解了：
 		传给require的路径标识必须是字符串字面量，不能是表达式，如下面使用require的方法是错误的：
-		复制代码 代码如下:
+		
 		require('module' + '1');
 		require('Module'.toLowerCase());
 
@@ -338,6 +338,66 @@
 		debug表示是否工作在调试模式下。
 
 三、总结：
+	1.AMD:AMD 是 RequireJS 在推广过程中对模块定义的规范化产出。（异步模块定义）
+	2.CMD:CMD 是 SeaJS 在推广过程中对模块定义的规范化产出。（通用模块定义）
+	3.AMD 和CMD的区别：
+
+		1）. 对于依赖的模块，AMD 是提前执行，CMD 是延迟执行。不过 RequireJS 从 2.0 开始，
+		也改成可以延迟执行（根据写法不同，处理方式不同）。CMD 推崇 as lazy as possible.
+
+		2）. CMD 推崇依赖就近，AMD 推崇依赖前置。看代码：
+
+		// CMD
+		define(function(require, exports, module) {
+		var a = require('./a')
+		a.doSomething()
+		// 此处略去 100 行
+		var b = require('./b') // 依赖可以就近书写
+		b.doSomething()
+		// ... 
+		})
+
+		// AMD 默认推荐的是
+		define(['./a', './b'], function(a, b) { // 依赖必须一开始就写好
+		a.doSomething()
+		// 此处略去 100 行
+		b.doSomething()
+		...
+		}) 
+
+		虽然 AMD 也支持 CMD 的写法，同时还支持将 require 作为依赖项传递，
+		但 RequireJS 的作者默认是最喜欢上面的写法，也是官方文档里默认的模块定义写法。
+
+
+		3）. AMD 的 API 默认是一个当多个用，CMD 的 API 严格区分，推崇职责单一。
+		比如 AMD 里，require 分全局 require 和局部 require，都叫 require。CMD 里，
+		没有全局 require，而是根据模块系统的完备性，提供 seajs.use 来实现模块系统的加载启动。
+		CMD 里，每个 API 都简单纯粹。
+	4.script defer和script async:
+		先来试个一句话解释仨，当浏览器碰到 script 脚本的时候：
+
+		<script src="script.js"></script>
+		没有 defer 或 async，浏览器会立即加载并执行指定的脚本，“立即”指的是在渲染该 
+		script 标签之下的文档元素之前，也就是说不等待后续载入的文档元素，读到就加载并执行。
+		<script async src="script.js"></script>
+		有 async，加载和渲染后续文档元素的过程将和 script.js 的加载与执行并行进行（异步）。
+		<script defer src="myscript.js"></script>
+		有 defer，加载后续文档元素的过程将和 script.js 的加载并行进行（异步），
+		但是 script.js 的执行要在所有元素解析完成之后，DOMContentLoaded 事件触发之前完成。
+		然后从实用角度来说呢，首先把所有脚本都丢到 </body> 之前是最佳实践，
+		因为对于旧浏览器来说这是唯一的优化选择，此法可保证非脚本的其他一切元素
+		能够以最快的速度得到加载和解析。
+
+
+	5.async 和 defer的区别：
+		1）defer 和 async 在网络读取（下载）这块儿是一样的，都是异步的（相较于 HTML 解析）
+		2）它俩的差别在于脚本下载完之后何时执行，显然 defer 是最接近我们对于应用脚本加载和执行的要求的
+		3）关于 defer，此图未尽之处在于它是按照加载顺序执行脚本的，这一点要善加利用
+		4）async 则是一个乱序执行的主，反正对它来说脚本的加载和执行是紧紧挨着的，所以不管
+		你声明的顺序如何，只要它加载完了就会立刻执行
+		5）仔细想想，async 对于应用脚本的用处不大，因为它完全不考虑依赖（哪怕是最低级的顺序执行），
+		不过它对于那些可以不依赖任何脚本或不被任何脚本依赖的脚本来说却是非常合适的，
+		最典型的例子：Google Analytics
 
 
 
