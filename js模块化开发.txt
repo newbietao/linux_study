@@ -56,6 +56,20 @@
 
 			fun1();
 		})
+		浏览器提示了"it works"，说明运行正确，但是有一点不一样，这次浏览器并不是一片空白，
+		body已经出现在页面中，目前为止可以知道requirejs具有如下优点：
+		1）防止js加载阻塞页面渲染
+		2）使用程序调用的方式加载js，防出现如下丑陋的场景
+		<script type="text/javascript" src="a.js"></script>
+		<script type="text/javascript" src="b.js"></script>
+		<script type="text/javascript" src="c.js"></script>
+		<script type="text/javascript" src="d.js"></script>
+		<script type="text/javascript" src="e.js"></script>
+		<script type="text/javascript" src="f.js"></script>
+		<script type="text/javascript" src="g.js"></script>
+		<script type="text/javascript" src="h.js"></script>
+		<script type="text/javascript" src="i.js"></script>
+		<script type="text/javascript" src="j.js"></script>
 	3.基本api
 	4.加载文件
 	5.全局配置
