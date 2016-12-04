@@ -252,7 +252,69 @@
 
 		第三种方法对于定义纯JSON数据的模块非常合适。
 	3.模块的载入和引用
-		
+		seajs.use
+		seajs.use主要用于载入入口模块。入口模块相当于C程序的main函数，同时也是整个模块
+		依赖树的根。上面在TinyApp小例子中，init就是入口模块。seajs.use用法如下：
+		复制代码 代码如下:
+
+		//单一模式
+		seajs.use('./a');
+
+		//回调模式
+		seajs.use('./a', function(a) {
+		  a.run();
+		});
+
+		//多模块模式
+		seajs.use(['./a', './b'], function(a, b) {
+		  a.run();
+		  b.run();
+		});
+
+		一般seajs.use只用在页面载入入口模块，SeaJS会顺着入口模块解析所有依赖模块并将它们
+		加载。如果入口模块只有一个，也可以通过给引入sea.js的script标签加入”data-main”
+		属性来省略seajs.use，例如，上面TinyApp的index.html也可以改为如下写法：
+		复制代码 代码如下:
+
+		<!DOCTYPE HTML>
+		<html lang="zh-CN">
+		<head>
+			<meta charset="UTF-8">
+			<title>TinyApp</title>
+		</head>
+		<body>
+			<p class="content"></p>
+			<script src="./sea.js" data-main="./init"></script>
+		</body>
+		</html>
+
+		这种写法会令html更加简洁。
+		require
+		require是SeaJS主要的模块加载方法，当在一个模块中需要用到其它模块时一般用require加载：
+		复制代码 代码如下:
+		var m = require('/path/to/module/file');
+
+		这里简要介绍一下SeaJS的自动加载机制。上文说过，使用SeaJS后html只要包含sea.js即可，
+		那么其它js文件是如何加载进来的呢？SeaJS会首先下载入口模块，然后顺着入口模块使用正则
+		表达式匹配代码中所有的require，再根据require中的文件路径标识下载相应的js文件，
+		对下载来的js文件再迭代进行类似操作。整个过程类似图的遍历操作（因为可能存在交叉循环
+		依赖所以整个依赖数据结构是一个图而不是树）。
+		明白了上面这一点，下面的规则就很好理解了：
+		传给require的路径标识必须是字符串字面量，不能是表达式，如下面使用require的方法是错误的：
+		复制代码 代码如下:
+		require('module' + '1');
+		require('Module'.toLowerCase());
+
+		这都会造成SeaJS无法进行正确的正则匹配以下载相应的js文件。
+		require.async
+		上文说过SeaJS会在html页面打开时通过静态分析一次性记载所有需要的js文件，如果想要
+		某个js文件在用到时才下载，可以使用require.async：
+		复制代码 代码如下:
+		require.async('/path/to/module/file', function(m) {
+			//code of callback...
+		});
+
+		这样只有在用到这个模块时，对应的js文件才会被下载，也就实现了JavaScript代码的按需加载。
 	4.SeaJS的全局配置
 		SeaJS提供了一个seajs.config方法可以设置全局配置，接收一个表示全局配置的配置对象。
 		具体使用方法如下：
