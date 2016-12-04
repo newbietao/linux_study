@@ -173,7 +173,107 @@
 		拥有数据和方法，数据和方法可以定义为公共或私有，公共数据和方法可以供别的模块调用。
 		另外，每个模块应该都定义在一个单独js文件中，即一个对应一个模块。
 	2.模块的定义和使用
+	  1）模块定义函数define
+		SeaJS中使用“define”函数定义一个模块，define可以接收三个参数：
+		如果只有一个参数，则赋值给factory。
+		如果有两个参数，第二个赋值给factory；第一个如果是array则赋值给deps，否则赋值给id。
+		如果有三个参数，则分别赋值给id，deps和factory。
+		但是，包括SeaJS的官方示例在内几乎所有用到define的地方都只传递一个工厂函数进去，
+		类似与如下代码：
+
+		define(function(require, exports, module) {
+			//code of the module...
+		});
+		
+		个人建议遵循SeaJS官方示例的标准，用一个参数的define定义模块。那么id和deps会怎么处理呢？
+		id是一个模块的标识字符串，define只有一个参数时，id会被默认赋值为此js文件的绝对路径。
+		如example.com下的a.js文件中使用define定义模块，则这个模块的ID会赋值为
+		 http://example.com/a.js ，没有特别的必要建议不要传入id。
+		 deps一般也不需要传入，需要用到的模块用require加载即可。
+	  2）工厂函数factory解析
+		工厂函数是模块的主体和重点。在只传递一个参数给define时（推荐写法），这个参数就是工
+		厂函数，此时工厂函数的三个参数分别是：
+		1.require——模块加载函数，用于记载依赖模块。
+		2.exports——接口点，将数据或方法定义在其上则将其暴露给外部调用。
+		3.module——模块的元数据。
+		这三个参数可以根据需要选择是否需要显示指定。
+		下面说一下module。module是一个对象，存储了模块的元信息，具体如下：
+		1.module.id——模块的ID。
+		2.module.dependencies——一个数组，存储了此模块依赖的所有模块的ID列表。
+		3.module.exports——与exports指向同一个对象。
+	  3）三种编写模块的模式
+		第一种定义模块的模式是基于exports的模式：
+		复制代码 代码如下:
+
+		define(function(require, exports, module) {
+			var a = require('a'); //引入a模块
+			var b = require('b'); //引入b模块
+
+			var data1 = 1; //私有数据
+
+			var func1 = function() { //私有方法
+				return a.run(data1);
+			}
+
+			exports.data2 = 2; //公共数据
+
+			exports.func2 = function() { //公共方法
+				return 'hello';
+			}
+		});
+		上面是一种比较“正宗”的模块定义模式。除了将公共数据和方法附加在exports上，
+		也可以直接返回一个对象表示模块，如下面的代码与上面的代码功能相同：
+
+		define(function(require) {
+			var a = require('a'); //引入a模块
+			var b = require('b'); //引入b模块
+
+			var data1 = 1; //私有数据
+
+			var func1 = function() { //私有方法
+				return a.run(data1);
+			}
+
+			return {
+				data2: 2,
+				func2: function() {
+				    return 'hello';
+				}
+			};
+		});
+		如果模块定义没有其它代码，只返回一个对象，还可以有如下简化写法：
+		复制代码 代码如下:
+		define({
+			data: 1,
+			func: function() {
+				return 'hello';
+			}
+		});
+
+		第三种方法对于定义纯JSON数据的模块非常合适。
 	3.模块的载入和引用
 	4.SeaJS的全局配置
 三、总结：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
