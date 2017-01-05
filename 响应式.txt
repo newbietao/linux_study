@@ -86,7 +86,14 @@
 		@media 媒体类型 and (媒体特性){
 			样式
 		}
-			
+		a)and 可以将多个关键词结合在一起使用，例如设置600px～900px
+			@media screen and (min-width:600px) and (max-wdith:900px){
+				样式
+			}
+		b）not 排除某种指定的媒体类型
+			@media not print and (min-width:600px){
+				样式
+			} 
 三、弹性盒模型
 四、移动端开发注意事项
 五、移动端交互
