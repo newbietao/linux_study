@@ -57,7 +57,32 @@
 		All：所有设备
 		Print：打印机
 		Screen：电脑显示器（支持像素的）
-		
+	3.媒体查询的几种方法：
+		link方法：就是在link标签引用样式的时候，通过link标签中的media属性来指定不同的
+		媒体类型。
+		<link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+		<link red="stylesheet" type="text/css" href="print.css" media="print"/>
+		@import方法
+			方法一：
+			@importurl(style.css) screen
+			@importurl(print.css) print
+			方法二：
+			<head>
+				<style>
+					@importurl(style.css) all
+				<style/>
+			<head/>
+		@media方法：媒体查询
+			<head>
+				<style>
+					@media screen{
+						选择器{
+							样式
+						}
+					}
+				<style/>
+			<head/>
+			
 三、弹性盒模型
 四、移动端开发注意事项
 五、移动端交互
