@@ -1,5 +1,23 @@
 一、基础知识
-	
+	1、pixel像素的基本知识
+		px:css piexl 逻辑像素，浏览器使用的抽象单位
+		dp，dt：device independent piexl 设备无关像素
+		dpr：devicePiexlRatio:设备像素缩放比
+		计算公式：1px = （dpr）^2 *dp
+	2、DPI、PPI
+		DPI:打印机每英寸可以喷的墨汁点
+		PPI：屏幕每英寸的像素数量
+		ppi越高，像素数越高，图像越清晰，但可视度越低，系统的默认的缩放比越大
+	3、viewport
+		a）将页面渲染在viewport里面（ios：980px，安卓：）
+		b) 然后在进行缩放直到显示整个网页
+		c）visual viewport、layout viewport，visual viewport是真实在屏幕上显示的
+		   页面，layout viewport是真实布局viewport，
+		   visual viewport = layout viewport × salce
+		d）不要使用默认的980px(ios)的布局viewport
+		   宽度不可控制，不同系统不同设备的默认值不同
+		   页面缩小版显示交互不好
+		   
 二、css3媒体查询
 三、弹性盒模型
 四、bootstrap
