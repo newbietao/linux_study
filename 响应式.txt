@@ -94,6 +94,11 @@
 			@media not print and (min-width:600px){
 				样式
 			} 
+		c)max-width:最大宽度，媒体类型小于或等于制定宽度是生效
+			@media screen (max-width:480px){
+				样式
+			}
+			
 三、弹性盒模型
 四、移动端开发注意事项
 五、移动端交互
