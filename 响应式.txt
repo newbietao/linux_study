@@ -98,6 +98,10 @@
 			@media screen (max-width:480px){
 				样式
 			}
+		d)min-width:最小宽度，媒体类型大于等于指定的宽度样式生效
+			@media screen (min-width:320px){
+				样式
+			}
 			
 三、弹性盒模型
 四、移动端开发注意事项
