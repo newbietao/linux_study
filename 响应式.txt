@@ -17,8 +17,57 @@
 		d）不要使用默认的980px(ios)的布局viewport
 		   宽度不可控制，不同系统不同设备的默认值不同
 		   页面缩小版显示交互不好
-		   
+		   链接不可点
+		   有缩放，缩放后又有滚动
+	4、meta标签
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+		name的值
+		width:设置布局viewport的特定的值（"device-width"）
+		initial-scale：设置页面初始缩放
+		minimum-scale:设置最少缩放
+		maximum-scale：最大缩放
+		user-scalable:用户能否缩放
+	5、px、em、rem的区别
+		px：像素（Pixel）。相对长度单位。像素px是相对于显示器屏幕分辨率而言的。
+		em ：是相对长度单位。相对于当前对象内文本的字体尺寸。如当前对行内文本的字体尺寸未
+		被人为设置，则相对于浏览器的默认字体尺寸。
+		rem：区别在于使用rem为元素设定字体大小时，仍然是相对大小，但相对的只是HTML根元素。
+	6、rem的妙用
 二、css3媒体查询
 三、弹性盒模型
-四、bootstrap
+四、移动端开发注意事项
+五、移动端交互
+六、bootstrap
+七、总结
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
