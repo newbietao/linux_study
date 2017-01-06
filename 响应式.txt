@@ -181,6 +181,16 @@
 			其中stretch为默认值，为拉伸，也就是父标签高度过高，其孩子元素的高度就多高，
 			start表示顶边对齐，end为底部对齐，center为居中对齐，baseline表示基线
 			（英文字母o,m,n等的底边位置线）对齐。
+		e)box-pack
+			box-pack决定了父标签水平遗留空间的使用，其可选值有：
+			start | end | center | justify
+			
+			就大部分的行为表现来说分别对应text-align属性的值：left | right | center | justify；
+			但是，之所以box-pack不使用”left”, 而是”start”，是因为box-direction属性，
+			这玩意可以反转原本的排列，原本的“左对齐”反转后结果是“右对齐”了，此时”left”
+			显然就词不达意了，所以使用”start”更具有概括性，就是与父标签的起始位置对齐，
+			从而不会产生语义与行为上的困扰。
+			其中”start”是box-pack属性的默认值，justify表示两端对齐。
 
 四、移动端开发注意事项
 五、移动端交互
