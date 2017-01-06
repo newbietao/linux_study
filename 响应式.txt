@@ -143,6 +143,24 @@
 			外盒尺寸计算：element空间尺寸 = 内容尺寸 + 外边距
 			内盒尺寸计算：element尺寸 = 内容尺寸
 			height、width = 内容尺寸 + 边框 + 内边距
+	2、弹性盒模型（box-flex）
+		a)基本用法：
+			父元素：css声明，display：box或者display：inline-box
+			子元素：css声明，box-flex:一个整数值。
+			
+			box和box-flex前都要加代表不同浏览器的前缀。
+			如：display: -webkit-box; -webkit-box-flex:1;
+			
+			如果子元素本身有宽度或者设置了外边距或者内边距，再或者子元素里还有子元素，那么在
+			分配时就需要把父元素的宽度减去子元素带有的宽度，在按比例进行分配。
+			
+			比例数值必须是大于等于1的整数。
+		b)box-orient
+			box-orient用来确定子元素的方向。是横着排还是竖着走。可选的值有：
+			horizontal | vertical | inline-axis | block-axis | inherit
+			其中，inline-axis是默认值。且horizontal与inline-axis的表现似乎一致的，
+			让子元素横排；而vertical与block-axis的表现也是一致的，让元素纵列。
+		
 四、移动端开发注意事项
 五、移动端交互
 六、bootstrap
