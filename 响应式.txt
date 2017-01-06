@@ -198,6 +198,11 @@
 
 			single | multiple
 			其中single是默认值，表示死活不换行，设置box-lines:multiple后，就多行显示了。
+		g）box-ordinal-group的作用是拉帮结派
+			这个“拉拢”就是这里的box-ordinal-group，拉拢的组织团伙是有一个数字级别的，
+			决定了你这个组织的位置。数值越小，位置就越靠前，这不难理解，第一组在最前嘛，
+			随后第二组，第三组… 例如：box-ordinal-group:1的组就会在box-ordinal-group:2
+			的组前面显示。
 四、移动端开发注意事项
 五、移动端交互
 六、bootstrap
