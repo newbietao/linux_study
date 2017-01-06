@@ -117,7 +117,32 @@
 				-webkit-background-size: cover;
 				background-size: cover;
 			}
+		f)高清图片的处理(Retina屏幕，或者dpr大于等于2的)
+			在移动端时，我们可以准备不同分辨率相同内容的两张图片，当移动设备支持Retina，或者
+			dpr大于等于2是加载较大分辨率的图片，普通屏幕加载较小的图片。
+			针对iphone5：
+			@media (max-width:480px ) and (min-resolution:2dppx) , 
+			(max-width:480px) and (-webkit-min-device-pixel-ratio：2) {
+				样式
+			}
+		g）常见媒体查询
+			iphone：
+				media="only screen and (-webkit-min-device-pixel-ratio: 2)"
+			ipad：
+				media="all and (orientation:portrait)"
+				media="all and (orientation:landscape)"
+			android：
+				media="only screen and (max-device-width:240px)"
 三、弹性盒模型
+	1、盒模型：
+		a）标准和模型
+			外盒尺寸计算：element空间尺寸 = 内容尺寸 + 外边距 + 内边距 + 边框
+			内盒尺寸计算：element尺寸 = 内容尺寸 + 内边距 + 边框
+			height、width = 内容尺寸
+		b)IE6以下下盒模型，怪异模式的和模型
+			外盒尺寸计算：element空间尺寸 = 内容尺寸 + 外边距
+			内盒尺寸计算：element尺寸 = 内容尺寸
+			height、width = 内容尺寸 + 边框 + 内边距
 四、移动端开发注意事项
 五、移动端交互
 六、bootstrap
