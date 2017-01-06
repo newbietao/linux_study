@@ -160,7 +160,14 @@
 			horizontal | vertical | inline-axis | block-axis | inherit
 			其中，inline-axis是默认值。且horizontal与inline-axis的表现似乎一致的，
 			让子元素横排；而vertical与block-axis的表现也是一致的，让元素纵列。
-		
+		c)box-direction
+			box-direction是用来确定子元素的排列顺序，可选值有：
+
+			normal | reverse | inherit
+			
+			其中normal是默认值，表示按照正常顺序排列。所谓正常顺序，就是我们看书写文字的顺序，
+			从左往右，由上至下，先出现的元素，就上面或是左边。而reverse表示反转，原本从左往
+			右应该是1-2-3的，结果显示确实3-2-1。
 四、移动端开发注意事项
 五、移动端交互
 六、bootstrap
