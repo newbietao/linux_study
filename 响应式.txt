@@ -143,7 +143,7 @@
 			外盒尺寸计算：element空间尺寸 = 内容尺寸 + 外边距
 			内盒尺寸计算：element尺寸 = 内容尺寸
 			height、width = 内容尺寸 + 边框 + 内边距
-	2、弹性盒模型（box-flex）
+	2、弹性盒模型（box-flex 老版）
 		a)基本用法：
 			父元素：css声明，display：box或者display：inline-box
 			子元素：css声明，box-flex:一个整数值。
@@ -168,6 +168,20 @@
 			其中normal是默认值，表示按照正常顺序排列。所谓正常顺序，就是我们看书写文字的顺序，
 			从左往右，由上至下，先出现的元素，就上面或是左边。而reverse表示反转，原本从左往
 			右应该是1-2-3的，结果显示确实3-2-1。
+		d）box-align
+			box-align与box-pack都是决定盒子内部剩余空间怎么使用的。在行为效果上就是表现为
+			“对齐”，这跟Adobe的软件中的一些“对齐”是一致的。
+			其中box-align决定了垂直方向上的空间利用，也就是垂直方向上的对齐表现。
+			为了便于记忆，我们可以拿来和CSS2中的vertical-align隐射记忆，两者都有”align”，
+			都是都是垂直方向的对齐；而剩下的box-pack就是水平方向的了。
+
+			box的可选参数有：
+
+			start | end | center | baseline | stretch
+			其中stretch为默认值，为拉伸，也就是父标签高度过高，其孩子元素的高度就多高，
+			start表示顶边对齐，end为底部对齐，center为居中对齐，baseline表示基线
+			（英文字母o,m,n等的底边位置线）对齐。
+
 四、移动端开发注意事项
 五、移动端交互
 六、bootstrap
