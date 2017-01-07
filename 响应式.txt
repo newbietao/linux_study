@@ -272,19 +272,28 @@
 			如果缩写「flex: auto」, 则其计算值为「1 1 auto」
 			如果「flex: none」, 则其计算值为「0 0 auto」
 			如果「flex: 0 auto」或者「flex: initial」, 则其计算值为「0 1 auto」，即「flex」初始值
-		f）flex-flow(父元素):
+		f）flex-flow(父元素): 第一个参数子元素的分布方向，第二个参数子元素是否换行。
 			flex-flow：<' flex-direction '> || <' flex-wrap '>
 			<' flex-direction '>：定义弹性盒子元素的排列方向。
 			<' flex-wrap '>：控制flex容器是单行或者多行。
-		g）flex-direction(父元素)：row | row-reverse | column | column-reverse
+		g）flex-direction(父元素，指定子元素排布方向)：
+			row | row-reverse | column | column-reverse
 			row：主轴与行内轴方向作为默认的书写模式。即横向从左到右排列（左对齐）。
 			row-reverse：对齐方式与row相反。
 			column：主轴与块轴方向作为默认的书写模式。即纵向从上往下排列（顶对齐）。
 			column-reverse：对齐方式与column相反。
-		h）flex-wrap(父元素)：nowrap | wrap | wrap-reverse
+		h）flex-wrap(父元素，指定子元素是否换行)：nowrap | wrap | wrap-reverse
 			nowrap：flex容器为单行。该情况下flex子项可能会溢出容器
 			wrap：flex容器为多行。该情况下flex子项溢出的部分会被放置到新行，子项内部会发生断行
 			wrap-reverse：反转 wrap 排列。
+		i）align-content(父元素，多行盒模型，竖直空间对齐)
+		j）align-items(父元素，单行盒模型，竖直空间对齐)
+		k）align-self：定义flex子项在flex容器的当前行的侧轴（纵轴）方向上的对齐方式。
+		l）justify-content(父元素，单行盒模型，水平空间对齐)
+		m）order(子元素)：设置或检索弹性盒模型对象的子元素出現的順序。
+			用整数值来定义排列顺序，数值小的排在前面。可以为负值。
+			order定义将会影响 <' position '> 值为static元素的层叠级别，数值小的会被数值大的盖住。
+			
 	4、新老版本弹性盒模型差异
 		a、在使用弹性盒模型的时候父元素必须要加display:box 或 display:inline-box
 			新版弹性盒模型：flex：display : flex
