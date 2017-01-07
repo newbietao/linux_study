@@ -204,6 +204,74 @@
 			随后第二组，第三组… 例如：box-ordinal-group:1的组就会在box-ordinal-group:2
 			的组前面显示。
 	3、弹性盒模型（box-flex 新版）
+		a）
+	4、新老版本弹性盒模型差异
+		a、在使用弹性盒模型的时候父元素必须要加display:box 或 display:inline-box:
+
+			新版弹性盒模型：flex：display : flex
+
+			老版弹性盒模型：box : display : -webkit-box
+
+		b、box-orient 定义盒模型的主轴方向
+
+		　 	新版：flex：flex-direction: row / column
+
+		　 	老版：box : -webkit-box-orient:
+
+			   　　horizontal 水平显示
+
+				 vertical 垂直方向  
+
+		c、box-direction 元素排列顺序
+
+		　 新版：flex : flex-direction: row-reverse / column-reverse;
+
+		　 老版：box : -webkit-box-direction:
+
+				   　normal 正序
+
+			   　    reverse 反序
+
+		d、box-pack 主轴方向富裕的空间管理
+
+			 新版：flex : justify-content : flex-start / flex-end / center / space-between / space-around;
+
+			 老版：box : -webkit-box-pack
+
+				      start 所有子元素在盒子左侧显示，富裕空间在右侧
+
+				      end 所有子元素在盒子右侧显示，富裕空间在左
+
+				      center 所有子元素居中
+
+				      justify 富裕空间在子元素之间平均分布
+
+		e、box-align 侧轴方向方向富裕的空间管理
+
+			 新版：flex : align-items : flex-start / flex-end / center / baseline
+
+			 老版：box : -webkit-box-align
+
+				      star 所有子元素在据顶
+
+				      end 所有子元素在据底
+
+				      center 所有子元素居中
+
+		f、Box-flex 定义盒子的弹性空间
+
+			 新版：flex : flex-grow
+
+			 老版：box : -webkit-box-flex
+
+			 子元素的尺寸=盒子的尺寸*子元素的box-flex属性值 / 所有子元素的box-flex属性值的和
+
+		g、box-ordinal-group 设置元素的具体位置
+
+			 新版：flex : order
+
+			 老版：box : -webkit-box-ordinal-group
+		
 四、移动端开发注意事项
 五、移动端交互
 六、bootstrap
