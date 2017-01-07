@@ -208,10 +208,9 @@
 			display:-webkit-flex;
 		b) flex-grow ：用来指定扩展比率，即剩余空间是正值时此「flex子项」相对于
 		  「flex容器」里其他「flex子项」能分配到空间比例。相当于老版本的box-flex
-		c）<' flex-shrink '>：
-用来指定收缩比率，即剩余空间是负值时此「flex子项」相对于「flex容器」里其他「flex子项」能收缩的空间比例。
-在收缩的时候收缩比率会以伸缩基准值加权
-在「flex」属性中该值如果被省略则默认为「1」
+		c）flex-shrink：用来指定收缩比率，即剩余空间是负值时此「flex子项」相对于
+		  「flex容器」里其他「flex子项」能收缩的空间比例。在收缩的时候收缩比率会以伸缩基准值加权
+		   在「flex」属性中该值如果被省略则默认为「1」
 	4、新老版本弹性盒模型差异
 		a、在使用弹性盒模型的时候父元素必须要加display:box 或 display:inline-box
 			新版弹性盒模型：flex：display : flex
