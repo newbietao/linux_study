@@ -206,7 +206,7 @@
 	3、弹性盒模型（box-flex 新版）
 		a）同老版弹性盒模型一样，要在父元素声明，弹性盒模型，但是新版使用的是flex而不是box，
 			display:-webkit-flex;
-		b) flex-grow ：用来指定扩展比率，即剩余空间是正值时此「flex子项」相对于
+		b) flex-grow(子元素) ：用来指定扩展比率，即剩余空间是正值时此「flex子项」相对于
 		  「flex容器」里其他「flex子项」能分配到空间比例。相当于老版本的box-flex
 		   计算公式：
 		   <ul class="flex">
@@ -236,7 +236,7 @@
 			来进行按比例均分容器总宽度
 			
 			
-		c）flex-shrink：用来指定收缩比率，即剩余空间是负值时此「flex子项」相对于
+		c）flex-shrink(子元素)：用来指定收缩比率，即剩余空间是负值时此「flex子项」相对于
 		  「flex容器」里其他「flex子项」能收缩的空间比例。在收缩的时候收缩比率会以伸缩基准值加权
 		   在「flex」属性中该值如果被省略则默认为「1」
 		   计算公式：
@@ -260,7 +260,7 @@
 			最后a,b,c的实际宽度分别为：300-16=284px, 200-21=179px, 400-63=337px
 			
 			
-		d）flex-basis：用来指定伸缩基准值，即在根据伸缩比率计算出剩余空间的分布之前，
+		d）flex-basis(子元素)：用来指定伸缩基准值，即在根据伸缩比率计算出剩余空间的分布之前，
 		「flex子项」长度的起始数值。
 		在「flex」属性中该值如果被省略则默认为「0%」
 		在「flex」属性中该值如果被指定为「auto」，则伸缩基准值的计算值是自身的 <' width '> 
@@ -272,6 +272,10 @@
 			如果缩写「flex: auto」, 则其计算值为「1 1 auto」
 			如果「flex: none」, 则其计算值为「0 0 auto」
 			如果「flex: 0 auto」或者「flex: initial」, 则其计算值为「0 1 auto」，即「flex」初始值
+		f）flex-flow(父元素):
+			flex-flow：<' flex-direction '> || <' flex-wrap '>
+			<' flex-direction '>：定义弹性盒子元素的排列方向。
+			<' flex-wrap '>：控制flex容器是单行或者多行。
 	4、新老版本弹性盒模型差异
 		a、在使用弹性盒模型的时候父元素必须要加display:box 或 display:inline-box
 			新版弹性盒模型：flex：display : flex
