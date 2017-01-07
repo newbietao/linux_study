@@ -208,14 +208,70 @@
 			display:-webkit-flex;
 		b) flex-grow ：用来指定扩展比率，即剩余空间是正值时此「flex子项」相对于
 		  「flex容器」里其他「flex子项」能分配到空间比例。相当于老版本的box-flex
+		   计算公式：
+		   <ul class="flex">
+				<li>a</li>
+				<li>b</li>
+				<li>c</li>
+			</ul>
+
+			.flex{display:flex;width:1500px;margin:0;padding:0;list-style:none;}
+			.flex :nth-child(1){flex:1 1 300px;}
+			.flex :nth-child(2){flex:2 2 200px;}
+			.flex :nth-child(3){flex:3 3 400px;}
+			本例定义了父容器宽（即主轴宽）为1500px，由于子元素设置了伸缩基准值flex-basis，
+			相加300+200+400=900，那么容器将有1500-900=600px的剩余宽度；
+			于是我们可以计算a,b,c将被扩展量是多少：
+			a的扩展量：(1/(1+2+3))*600，即约等于100px
+			b的扩展量：(2/(1+2+3))*600，即约等于200px
+			c的扩展量：(3/(1+2+3))*600，即约等于300px
+			最后a,b,c的实际宽度分别为：300+100=400px, 200+200=400px, 400+300=700px
+			从本例能看出：
+			当「flex-basis」在「flex」属性中不为0时（包括值为auto，此时伸缩基准值等于自
+			身内容宽度），「flex子项」将分配容器的剩余空间（剩余空间即等于容器宽度减去各
+			项的伸缩基准值）
+			当「flex-basis」在「flex」属性中等于0时，「flex子项」将分配容器的所有空间
+			（因为各项的伸缩基准值相加等于0，剩余空间等于容器宽度减去各项的伸缩基准值，
+			即减0，最后剩余空间值等于容器宽度），所以可以借助此特性，给各子项定义「flex: n」
+			来进行按比例均分容器总宽度
+			
+			
 		c）flex-shrink：用来指定收缩比率，即剩余空间是负值时此「flex子项」相对于
 		  「flex容器」里其他「flex子项」能收缩的空间比例。在收缩的时候收缩比率会以伸缩基准值加权
 		   在「flex」属性中该值如果被省略则默认为「1」
+		   计算公式：
+		   <ul class="flex">
+				<li>a</li>
+				<li>b</li>
+				<li>c</li>
+			</ul>
+
+			.flex{display:flex;width:800px;margin:0;padding:0;list-style:none;}
+			.flex :nth-child(1){flex:1 1 300px;}
+			.flex :nth-child(2){flex:2 2 200px;}
+			.flex :nth-child(3){flex:3 3 400px;}
+			本例定义了父容器宽（即主轴宽）为800px，由于子元素设置了伸缩基准值flex-basis，
+			相加300+200+400=900，那么子元素将会溢出900-800=100px；
+			由于同时设置了收缩因子，所以加权综合可得300*1+200*2+400*3=1900px；
+			于是我们可以计算a,b,c将被移除的溢出量是多少：
+			a被移除溢出量：(300*1/1900)*100，即约等于16px
+			b被移除溢出量：(200*2/1900)*100，即约等于21px
+			c被移除溢出量：(400*3/1900)*100，即约等于63px
+			最后a,b,c的实际宽度分别为：300-16=284px, 200-21=179px, 400-63=337px
+			
+			
 		d）flex-basis：用来指定伸缩基准值，即在根据伸缩比率计算出剩余空间的分布之前，
 		「flex子项」长度的起始数值。
 		在「flex」属性中该值如果被省略则默认为「0%」
 		在「flex」属性中该值如果被指定为「auto」，则伸缩基准值的计算值是自身的 <' width '> 
 		设置，如果自身的宽度没有定义，则长度取决于内容。
+		e）flex综合写法：
+			直接写flex，然后后面家三个参数，第一个参数代表flex-grow，第二个参数代表：flex-shrink，
+			第三个参数代表，flex-basis。
+			如果缩写「flex: 1」, 则其计算值为「1 1 0%」
+			如果缩写「flex: auto」, 则其计算值为「1 1 auto」
+			如果「flex: none」, 则其计算值为「0 0 auto」
+			如果「flex: 0 auto」或者「flex: initial」, 则其计算值为「0 1 auto」，即「flex」初始值
 	4、新老版本弹性盒模型差异
 		a、在使用弹性盒模型的时候父元素必须要加display:box 或 display:inline-box
 			新版弹性盒模型：flex：display : flex
