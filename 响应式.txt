@@ -419,6 +419,21 @@
 			 老版：box : -webkit-box-ordinal-group
 		
 四、移动端开发注意事项
+	1.高清图片
+		100x100的图片使用100px X 100px渲染如果是dpr等于一的设备可以正常显示，但是dpr不等于
+		1，就会显得模糊，这是就需要使用100px/dpr X 100px/dpr渲染图片或者使用200x200的图片。
+	2.一像素边框
+		和高清图片一样，设置1px的边框时，如果正常dpr是使用1物理像素渲染，而dpr较高时使用1xdpr
+		个物理像素渲染的。这样会出现显示模糊，我们可以使用，scale（1/dpr）的方式对边框进行缩放。
+	3.多行文本溢出
+		.text{
+			display:-webkit-box !imporint;
+			overflow:hidden;
+			text-overflow:ellipsis;
+			word-break:break-all;
+			-webkit-box-orient:vertical;
+			-webkit-line-clamp:2;
+		}
 五、移动端交互
 六、bootstrap
 七、总结
