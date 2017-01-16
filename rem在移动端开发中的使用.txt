@@ -18,3 +18,36 @@
 	如果用rem来页面，我们会根据不同的设备宽度在根元素上设置不同的字体大小。宽度越宽，字体越大。
 	然后对原本使用px的地方使用rem来替换。这样，字体大小，内容尺寸，对随着屏幕宽度的变大而变大。
 三、具体做法
+	1 根据不同的设备宽度在根元素上设置不同的字体大小。
+	我一般会设置1rem为1/10屏幕宽度。代码如下
+
+	;
+	(function(win) {
+		var doc = win.document;
+		var docEl = doc.documentElement;
+		var tid;
+
+		function refreshRem() {
+		    var width = docEl.getBoundingClientRect().width;
+		    if (width > 540) { // 最大宽度
+		        width = 540;
+		    }
+		    var rem = width / 10; // 将屏幕宽度分成10份， 1份为1rem
+		    docEl.style.fontSize = rem + 'px';
+		}
+
+		win.addEventListener('resize', function() {
+		    clearTimeout(tid);
+		    tid = setTimeout(refreshRem, 300);
+		}, false);
+		win.addEventListener('pageshow', function(e) {
+		    if (e.persisted) {
+		        clearTimeout(tid);
+		        tid = setTimeout(refreshRem, 300);
+		    }
+		}, false);
+
+		refreshRem();
+
+	})(window);
+
