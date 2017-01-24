@@ -24,8 +24,10 @@
 		常量的定义：define('常量名'，'值');
 		常量区分大小写，命名建议大写，而且值必须是标量：string, int, float, bool.
 		作用域：全局。
-		
-		
+		系统常量：M_PI, PHP_OS, PHP_VERSION,　
+	6.魔术常量
+		__LINE__ :当前行数，　__FILE__:当前文件的路径　__FUNCTION__:　当前函数的
+		__CLASS__:类名　__METHOD__ : 类名：：方法名
 		
 		
 		
