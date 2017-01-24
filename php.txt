@@ -31,7 +31,12 @@
 	７．变量、常量检测
 		isset(变量名);//变量存在返回true,不存在返回false.
 		defined(常量名);//常量存在返回true,不存在返回false.
-	
+三、数据类型
+	１．php 类型
+		标量类型：整形(int)、浮点型（flaot)、字符串(string)、布尔(boolean)
+		符合类型：数组(array) 、　对象(object)
+		其他类型：资源(resource) NULL
+		
 		
 		
 		
