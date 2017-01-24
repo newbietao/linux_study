@@ -28,7 +28,10 @@
 	6.魔术常量
 		__LINE__ :当前行数，　__FILE__:当前文件的路径　__FUNCTION__:　当前函数的
 		__CLASS__:类名　__METHOD__ : 类名：：方法名
-		
+	７．变量、常量检测
+		isset(变量名);//变量存在返回true,不存在返回false.
+		defined(常量名);//常量存在返回true,不存在返回false.
+	
 		
 		
 		
