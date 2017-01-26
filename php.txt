@@ -92,6 +92,17 @@
 		gettype(变量，常量);返回值是数据类型，例如：array
 		is_int() is_float() is_array() is_object() is_null() is_bool() is_resource()
 		参数是变量或者是常量，返回值是bool值。
+	９．数据类型转换
+		自由转换：由于php是弱类型语言，所以只要改变变量值得类型，就可以改变变量的类型。
+		强制转换：在变量前加(数据类型)，不作用于原变量，只生成新的结果
+			$year = "2008年";
+			$newyear = (int)$year;
+		settype(),作用于原变量，改变原变量的数据类型。
+			$aa = 11;//int
+			settype($aa,"string");//string
+		具体的转换函数：只能用于标量，intval();转换为整形，floatval();转换为浮点型
+		strval();转换为字符型。
+		
 四、
 	
 		
