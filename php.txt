@@ -86,6 +86,15 @@
 				"banana"=>"香蕉"
 			);
 		访问关联数组：数组变量加['键']
+	６．对象：具有一定属性和方法的集合。
+	７．资源：外部文件、数据库资源、等等。
+	８．数据类型判断
+		gettype(变量，常量);返回值是数据类型，例如：array
+		is_int() is_float() is_array() is_object() is_null() is_bool() is_resource()
+		参数是变量或者是常量，返回值是bool值。
+四、
+	
+		
 			
 			
 		
