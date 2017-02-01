@@ -224,6 +224,60 @@
 		echo $name;//张三
 		sayname(&$name);
 		echo $name;//张三你好
+	７．任意数量的参数
+		func_get_args() 接收一个数组，数组里面包含所有参数
+		func_num_args() 返回一共有几个参数。
+		func_get_arg(int) 返回第几个参数
+		
+		function test(){
+			echo func_get_args();//["test1","test2","test3"]
+			echo func_num_args();//3
+			echo func_get_arg(2);//"test2"
+		}
+		test("test1","test2","test3");
+	8.变量函数
+		可以在变量后面加(),系统会查找与变量同名的函数，去执行。
+		function test(){
+			........
+		}
+		$func = "test";
+		$func();//会执行test();
+	9.递归调用
+		在函数体内调用自身
+		加上一个终止条件要不会陷入死循环。
+		function add($num){
+			if($num == 1){
+				return 1;
+			}else{
+				return $num + add($num - 1);
+			}
+		
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		
 		
 			
