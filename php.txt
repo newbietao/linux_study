@@ -212,7 +212,18 @@
 		static();//3
 		static();//4
 	６．按值传递参数和按址传递参数
-	
+		函数调用时传递的参数，如果按值传递(就是直接以变量名传递)，在函数内无论怎么对参数进行
+		操作，都不会影响到外部变量。
+		如果按址传递，函数内的操作，就会影响到外部变量。
+		function sayname($name){
+			$name .= "你好";
+			echo $name;
+		}
+		$name = "张三";
+		sayname($name);
+		echo $name;//张三
+		sayname(&$name);
+		echo $name;//张三你好
 		
 		
 			
