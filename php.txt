@@ -271,7 +271,10 @@
 		ltrim 删除字符串左边空格
 		rtrim 删除字符串右边空格
 	３．字符创大小写的处理
-
+		strtolower 将字符串转化为小写
+		strtoupper 将字符串转化为大写
+		ucfirst 字符串首字母大写
+		ucwords 单词首字母大写
 
 
 
