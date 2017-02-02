@@ -267,6 +267,9 @@
 		$str = "hello world!";
 		strlen($str);//１２
 	２．字符串空格
+		trim 删除字符串左右空格
+		ltrim 删除字符串左边空格
+		rtrim 删除字符串右边空格
 	３．字符创大小写的处理
 
 
