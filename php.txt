@@ -284,7 +284,14 @@
 		$str = "hello world";
 		$newstr = str_pad($str,15,"+","STR_PAD_BOTH");
 		echo $newstr; // ++hello world++
-
+	5.字符串翻转函数
+		strrev();
+	6.md5加密
+		md5();
+	7.格式化金额字符串函数
+		number_format("字符串","小数位数","小数点","千位分隔符");
+		$num = "12345";
+		echo number_format($num,3);//12,345.000
 
 
 
