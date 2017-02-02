@@ -294,9 +294,12 @@
 		echo number_format($num,3);//12,345.000
 	8.字符串拆分成数组
 		explode("拆分字符串的分割符","要拆分的字符串",返回数组的长度);
+		$str = "hello world";
+		$arr = explode(" ",$str);
 	９．把数组组合成字符串
 		implode("连接的字符串(可选)",数组);
-
+		$arr = array("世界","亚洲","中国");
+		$str = implode($arr);//世界亚洲中国
 
 
 
