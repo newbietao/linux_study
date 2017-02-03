@@ -305,13 +305,18 @@
 		print str;//只能输出一个字符串
 	11. 字符串截取
 		substr("字符串",int(截取开始的位置),int(截取的长度));
-		strchr("原始字符串","目标字符串") strstr();查找一个字符串在另一个字符串中第一次出现的，并返回字符串到结尾。
-		如果没有结果返回false;
-		$str = "hello world";
-		$str1 = "world";
-		$res = strstr($tr,$str1);//world
+		strchr("原始字符串","目标字符串") strstr();查找一个字符串在另一个字符串中第一次
+		出现的，并返回字符串到结尾，如果没有结果返回false;
+			$str = "hello world";
+			$str1 = "world";
+			$res = strstr($tr,$str1);//world
+	
+		stristr();功能和strstr相同，但是不区分大小写。
 		
+		strrchr();查找一个字符串在另一个字符串上最后出现的位置，并返回字符串到结尾。
 		
+		strpos();查找一个字符串在另一个字符串上第一次出现的位置。
+		stripos();查找一个字符串在另一个字符串上第一次出现的位置。不区分大小写。
 		
 
 
