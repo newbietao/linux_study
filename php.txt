@@ -336,15 +336,25 @@
 			chuck_split($str,3);
 			hel llo wor ld!
 	14.	字符串替换函数
-		str_replace("替换后的字符串","要替换的字符串","原字符串");//替换字符串或数组
-		str_ieplace();//功能同上，不区分大小写
-		$str = "hello world";
-		$newstr = str_replace("H","h",$str);//Hello world
-		$arr1 = array("H","W");
-		$arr2 = array("h","w");
-		$newstr = str_replace($arr1,$arr2,$str);//Hello World
-
-
+		str_replace("替换后的字符串","要替换的字符串","原字符串",$num);//替换字符串或数组
+		str_ieplace();//功能同上，不区分大小写,第四个参数可以统计替换次数
+			$str = "hello world";
+			$newstr = str_replace("H","h",$str);//Hello world
+			$arr1 = array("H","W");
+			$arr2 = array("h","w");
+			$newstr = str_replace($arr1,$arr2,$str);//Hello World
+		strtr();替换字符串中的任意字符。
+			$str = "hello world";
+			$newstr = strtr($str,"hw","HW");//Hello World
+			$arr = array("h"=>"H","w"=>"W");
+			$newstr = strtr($str,$arr);//Hello World
+	15. 字符串比较函数
+		strcmp();比较字符串，如果相同返回０，如果字符串１＜字符串２返回-1，否则返回１．
+		strcasecmp();不区分大小写的字符串比较。
+		strnatcmp();按自然数进行字符串比较
+		strncmp();指定位置进行字符串比较
+		similar_text();比较两个字符串有多少个字符相等，第三个参数返回一个变量，为两个字符串
+		相似的百分比。
 
 
 
