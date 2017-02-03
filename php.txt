@@ -300,7 +300,19 @@
 		implode("连接的字符串(可选)",数组);
 		$arr = array("世界","亚洲","中国");
 		$str = implode($arr);//世界亚洲中国
-
+	10. 字符串输出
+		echo  str1,str2......;//输出一个和多个字符串
+		print str;//只能输出一个字符串
+	11. 字符串截取
+		substr("字符串",int(截取开始的位置),int(截取的长度));
+		strchr("原始字符串","目标字符串") strstr();查找一个字符串在另一个字符串中第一次出现的，并返回字符串到结尾。
+		如果没有结果返回false;
+		$str = "hello world";
+		$str1 = "world";
+		$res = strstr($tr,$str1);//world
+		
+		
+		
 
 
 
