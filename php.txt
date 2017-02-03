@@ -355,6 +355,24 @@
 		strncmp();指定位置进行字符串比较
 		similar_text();比较两个字符串有多少个字符相等，第三个参数返回一个变量，为两个字符串
 		相似的百分比。
+	16. 字符串统计函数
+		substr_count(str,str,pos,len);查找一个字符串在另一个字符串中出现的次数，
+		可以指定起始位置，和查找长度。
+			$str = "hello world";
+			substr_count($str,"l");//3
+	17.	字符串处理函数
+		parse_url 解析url，返回其组成部分
+		
+		urlencode url编码
+		urldecode url对已经编码的进行解码
+		
+		htmlentities 将字符串转化为ＨＴＭＬ实体
+			参数１：操作的内容
+			参数２：转换规则
+				　　　ENT_COMPAT:只转换双引号
+				　　　ENT_QUOTES:转换单双引号
+				　　　ENT_NOQUOTES:不转换单双引号
+				　　　
 
 
 
