@@ -372,6 +372,39 @@
 				　　　ENT_COMPAT:只转换双引号
 				　　　ENT_QUOTES:转换单双引号
 				　　　ENT_NOQUOTES:不转换单双引号
+	18. 字符串转义处理
+		addslashes();在字符串中需要转义的字符前添加反斜杠进行转义。
+		stripslashes();将转移的字符前的反斜杠删除。
+		get_magic_quots_gpc 后的字符串中是否开启自动转义。
+	19.资源数据转义
+		get_magic_quotes_runtime(); 获得外部文件及数据资料时是否进行转义
+		set_magic_quotes_runtiime();设置获得外部文件及数据资料时是否进行转义
+		strip_tags() 去除HTML XML php的标签。
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 				　　　
 
 
